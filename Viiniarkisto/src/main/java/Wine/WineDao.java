@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package viinit;
+package Wine;
 
 /**
  *
  * @author susanna
  */
-public class models {
+public class WineDao {
     
 }
