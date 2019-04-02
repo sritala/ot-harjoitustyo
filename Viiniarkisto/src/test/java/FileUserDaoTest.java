@@ -40,12 +40,13 @@ public class FileUserDaoTest {
         assertEquals("Matti", user.getUsername());
     }
     
-    @Test
+ /*   @Test
     public void existingUserIsFound() {
         User user = dao.findByUsername("testitesti");
         assertEquals("Matti Virtanen", user.getName());
         assertEquals("Matti", user.getUsername());
     }
+*/
     
     @Test
     public void nonExistingUserIsFound() {
