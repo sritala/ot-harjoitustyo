@@ -5,16 +5,18 @@
  */
 package Wine;
 
-import java.util.List;
+import java.util.Scanner;
 
 /**
  *
  * @author susanna
  */
-public interface WineDao {
+public class PaaOhjelma {
     
-    Wine create(Wine wine) throws Exception;
-
-    List<Wine> getAll();
+    public static void main(String[] args) throws Exception {
+        Scanner input = new Scanner(System.in);
+        WineArchive va = new WineArchive(input);
+        va.start();
+    }
     
 }
