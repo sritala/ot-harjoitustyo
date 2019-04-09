@@ -1,4 +1,4 @@
-# ot-harjoitustyo
+# Viiniarkisto
 
 Tämä on harjoitustyö Ohjelmistotekniikan kurssille 
 
