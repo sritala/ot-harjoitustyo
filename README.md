@@ -2,7 +2,7 @@
 
 Tämä on harjoitustyö Ohjelmistotekniikan kurssille 
 
-[Arkkitehtuurikuvaus]()
+[Arkkitehtuurikuvaus](https://github.com/sritala/ot-harjoitustyo/tree/master/dokumentaatio/arkkitehtuuri)
 
 [Vaatimusmäärittely](https://github.com/sritala/ot-harjoitustyo/tree/master/dokumentaatio/vaatimusmaarittely)
 
