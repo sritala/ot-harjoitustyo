@@ -5,6 +5,8 @@
  */
 package Wine;
 
+import Wine.domain.WineService;
+import Wine.dao.FileWineDao;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

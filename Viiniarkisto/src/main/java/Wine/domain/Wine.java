@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Wine;
+package Wine.domain;
 
 /**
  *
@@ -34,7 +34,7 @@ public class Wine {
         return this.year;
     }
     
-    public void setId(int param){
+    public void setId(int param) {
         this.id = param;
     }
 
@@ -42,11 +42,11 @@ public class Wine {
         return this.id;
     }
     
-    public String getCountry(){
+    public String getCountry() {
         return this.country;
     }
 
-    public String getName(){
+    public String getName() {
         return this.name;
     }
 

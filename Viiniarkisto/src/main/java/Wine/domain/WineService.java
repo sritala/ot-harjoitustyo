@@ -3,8 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Wine;
+package Wine.domain;
 
+import Wine.dao.WineDao;
+import Wine.domain.Wine;
 import java.util.List;
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
 public class WineService {
     private WineDao wineDao;
     
-    public WineService(WineDao wineDao){
+    public WineService(WineDao wineDao) {
      this.wineDao = wineDao;   
     }
     
@@ -39,16 +41,20 @@ public class WineService {
         return true;
     }
     
-    public String getWines(){
-        List<Wine> wines = wineDao.getAll();
-        String apu = "";
-        for(Wine wine: wines){
-            apu += "Viinin id: " + wine.getId() + "\n";
-            apu += "Vuosi: " + wine.getYear() + "\n";
-            apu += "Valmistusmaa: " + wine.getCountry() + "\n";
-            apu += "Nimi: " + wine.getName() + "\n";
-        }
-        return apu;
+    public List<Wine> getWines() {
+        return wineDao.getAll();
     }
+    
+//    public String getWines(){
+//        List<Wine> wines = wineDao.getAll();
+//        String apu = "";
+//        for(Wine wine: wines){
+//            apu += "Viinin id: " + wine.getId() + "\n";
+//            apu += "Vuosi: " + wine.getYear() + "\n";
+//            apu += "Valmistusmaa: " + wine.getCountry() + "\n";
+//            apu += "Nimi: " + wine.getName() + "\n";
+//        }
+//        return apu;
+//    }
     
 }
