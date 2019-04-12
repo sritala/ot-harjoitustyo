@@ -1,0 +1,6 @@
+1;2014;Saksa;Riesling
+2;2014;jdsd;dkjfkjd
+3;1234567;sdfgh;sdfgh
+4;123456;sdfg;esfg
+5;12345;wertgyhj;wsedrfgth
+6;1234;wfrh;Testi viini
