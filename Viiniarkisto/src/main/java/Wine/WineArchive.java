@@ -74,7 +74,7 @@ public class WineArchive {
                 
                 
             }else if (komento.equals("3")) {
-                deleteWine();
+                delete();
 
         }
     }
@@ -113,7 +113,8 @@ public class WineArchive {
         
     }
 
-    private void deleteWine() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void delete() {
+      ArrayList<Wine>winelist = new ArrayList();
+      wineService.delete();
     }
 }

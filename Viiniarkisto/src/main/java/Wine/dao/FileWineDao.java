@@ -67,4 +67,9 @@ public class FileWineDao implements WineDao {
         return this.wines;
     }
 
+    @Override
+    public void delete() {
+     
+    }
+
 }

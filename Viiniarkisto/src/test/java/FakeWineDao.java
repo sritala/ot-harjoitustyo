@@ -26,4 +26,9 @@ public class FakeWineDao implements WineDao {
         return this.wines;
     }
 
+    @Override
+    public void delete() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
 }

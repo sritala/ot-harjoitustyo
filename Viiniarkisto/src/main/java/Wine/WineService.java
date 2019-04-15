@@ -44,6 +44,9 @@ public class WineService {
     public List<Wine> getWines() {
         return wineDao.getAll();
     }
+    public void delete(){
+        wineDao.delete();
+    }
     
 //    public String getWines(){
 //        List<Wine> wines = wineDao.getAll();

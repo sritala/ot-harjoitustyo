@@ -18,4 +18,6 @@ public interface WineDao {
 
     List<Wine> getAll();
     
+    void delete();
+    
 }
