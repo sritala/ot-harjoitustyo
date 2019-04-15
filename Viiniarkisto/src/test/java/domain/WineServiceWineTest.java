@@ -1,3 +1,5 @@
+package domain;
+
 
 import Wine.domain.Wine;
 import Wine.domain.WineService;
