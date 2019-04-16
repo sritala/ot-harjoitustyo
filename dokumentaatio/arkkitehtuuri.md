@@ -14,6 +14,9 @@ User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käy
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka.png">
 
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka2.png">
+
+
 ## käyttäjän kirjautuminen
 
 Kun kirjautumisnäkymässä on syötekenttään kirjoitettu oikea käyttäjätunnus ja painetaan enteriä niin sovellus kirjautuu sisään. Sovelluksen kontrolli etenee seuraavasti:
