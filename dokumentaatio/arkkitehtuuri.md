@@ -10,6 +10,8 @@ tulossa
 
 ## Sovelluslogiikka
 
+User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käyttäjällä on uniikki käyttäjätunnus ja jokaisella viinillä on oma id ja listattuna sen tuontantovuosi, tuotantomaa sekä nimi. 
+
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka.png">
 
 ## käyttäjän kirjautuminen
