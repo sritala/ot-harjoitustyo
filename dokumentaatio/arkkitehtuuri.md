@@ -6,13 +6,35 @@ Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakka
 
 ## Käyttöliittymä
 
-tulossa
+Käyttöliittymän näkymät ovat seuraavat: 
+
+- Kirjautuminen
+- Uuden viinin luominen
+- Viinilista
+
+Käyttöliittymä on rakennettu WineArchiveen ja noudattaa tekstikäyttöliittymää. Ensimmäiseksi sovellus pyytää kirjautumaan sisään ja onnistuneen kirjautumisen jälkeen se siirtyy käyttäjän Viiniarkistoon. Viiniarkistossa käyttäjä saa vaihtoehdot:
+
+- 1 lisää viini 
+- 2 listaa viinit
+- 3 poista viini
+- x kirjaudu ulos
 
 ## Sovelluslogiikka
 
 User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käyttäjällä on uniikki käyttäjätunnus ja jokaisella viinillä on oma id ja listattuna sen tuontantovuosi, tuotantomaa sekä nimi. 
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka.png">
+
+WineService vastaa toiminnallisista kokonaisuuksista ja tarjoaa muun muassa seuraavanlaisia metodeita.
+
+Viineille:
+- boolean createWine(int year, String country, String name)
+- void deleteWine(String name)
+
+Käyttäjälle:
+- boolean login(String username)
+- void create(String username)
+- void logout()
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka2.png">
 
