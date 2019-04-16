@@ -10,7 +10,7 @@ Tämä on harjoitustyö Ohjelmistotekniikan kurssille
 
 ## Kirjautuminen
 
-Toimii tällä hetkellä vain "susanna" käyttäjällä.
+Toimii tällä hetkellä vain "susanna" käyttäjällä
 
 ## Komentorivitoiminnot
 
