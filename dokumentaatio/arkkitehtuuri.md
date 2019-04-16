@@ -9,5 +9,4 @@
 ## käyttäjän kirjautuminen
 
 ## uuden käyttäjän luominen
-
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavioOT.png width="750">>
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavioOT.png">
