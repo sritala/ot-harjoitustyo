@@ -32,7 +32,8 @@ public class FileWineDao implements WineDao {
                 int year = Integer.parseInt(parts[1]);
                 String country = parts[2];
                 String name = parts[3];
-                Wine wine = new Wine(id, year, country, name);
+                Wine wine = new Wine(year, country, name);
+                wine.setId(generateId());
                 this.wines.add(wine);
             }
         } catch (Exception e) {
@@ -68,7 +69,15 @@ public class FileWineDao implements WineDao {
     }
 
     @Override
-    public void delete() {
+    public void delete(String name) throws Exception {
+        for (int i = 0; i < this.wines.size(); i++) {
+            Wine wine = this.wines.get(i);
+            if(wine.getName().equalsIgnoreCase(name)){
+                this.wines.remove(i);
+            }
+            save();
+        }
+        
      
     }
 

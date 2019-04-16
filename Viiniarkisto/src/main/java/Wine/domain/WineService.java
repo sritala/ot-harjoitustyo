@@ -1,24 +1,24 @@
-
 package Wine.domain;
 
 import Wine.dao.UserDao;
 import Wine.dao.WineDao;
 import Wine.domain.Wine;
 import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
  * @author susanna
  */
-
 public class WineService {
 
     private WineDao wineDao;
     private UserDao userDao;
     private User loggedIn;
 
-    public WineService(WineDao wineDao) {
-        
+    public WineService(WineDao wineDao, UserDao userDao) {
+
         this.userDao = userDao;
         this.wineDao = wineDao;
     }
@@ -32,7 +32,6 @@ public class WineService {
      *
      * @return luonnin onnistumisstatus
      */
-    
     public boolean createWine(int year, String country, String name) {
         Wine wine = new Wine(year, country, name);
         try {
@@ -48,8 +47,12 @@ public class WineService {
         return wineDao.getAll();
     }
 
-    public void delete() {
-        wineDao.delete();
+    public void delete(String name) {
+        try {
+            wineDao.delete(name);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
     }
 
 //    public String getWines(){
@@ -67,11 +70,17 @@ public class WineService {
         User user = userDao.findByUsername(username);
         if (user == null) {
             return false;
+            
         }
-
         loggedIn = user;
 
         return true;
+    }
+
+    public void create(String username) throws Exception {
+        User newUser = new User(username);
+        userDao.create(newUser);
+        login(newUser.getUsername());
     }
 
     /**
@@ -79,7 +88,6 @@ public class WineService {
      *
      * @return kirjautuneena oleva käyttäjä
      */
-
     public User getLoggedUser() {
         return loggedIn;
     }
@@ -95,23 +103,21 @@ public class WineService {
      * uuden käyttäjän luominen
      *
      * @param username käyttäjätunnus
-     * @param name käyttäjän nimi
      *
      * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
      */
-    
-    public boolean createUser(String username, String name) {
-        if (userDao.findByUsername(username) != null) {
-            return false;
-        }
-        User user = new User(username, name);
-        try {
-            userDao.create(user);
-        } catch (Exception e) {
-            return false;
-        }
-
-        return true;
-    }
+//    public boolean createUser(String username, String name) {
+//        if (userDao.findByUsername(username) != null) {
+//            return false;
+//        }
+//        User user = new User(username);
+//        try {
+//            userDao.create(user);
+//        } catch (Exception e) {
+//            return false;
+//        }
+//
+//        return true;
+//    }
 
 }

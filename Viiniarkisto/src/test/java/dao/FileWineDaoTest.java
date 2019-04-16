@@ -5,7 +5,6 @@ package dao;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 import Wine.dao.FileWineDao;
 import Wine.domain.Wine;
 import Wine.dao.WineDao;
@@ -43,9 +42,20 @@ public class FileWineDaoTest {
         assertEquals(1, wines.size());
         Wine wine = wines.get(0);
 
-       assertEquals(2014, wine.getYear());
-        assertEquals("Saksa",wine.getCountry());
+        assertEquals(2014, wine.getYear());
+        assertEquals("Saksa", wine.getCountry());
         assertEquals("Schloss", wine.getName());
+    }
+
+    @Test
+    public void correctListingAfterDeletedWine() throws Exception {
+        dao.create(new Wine(2014, "Saksa", "Schloss"));
+        List<Wine> wines = dao.getAll();
+        assertEquals(1, wines.size());
+        
+        dao.delete("Schloss");
+        wines = dao.getAll();
+        assertEquals(0, wines.size());
     }
 
     @Test

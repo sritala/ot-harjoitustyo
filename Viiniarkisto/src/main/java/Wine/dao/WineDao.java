@@ -18,6 +18,6 @@ public interface WineDao {
 
     List<Wine> getAll();
     
-    void delete();
+    void delete(String name) throws Exception;
     
 }

@@ -29,8 +29,15 @@ public class FakeWineDao implements WineDao {
     }
 
     @Override
-    public void delete() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void delete(String name) throws Exception {
+        for (int i = 0; i < this.wines.size(); i++) {
+            Wine wine = this.wines.get(i);
+            if(wine.getName().equalsIgnoreCase(name)){
+                wines.remove(i);
+            }
+        }
     }
+
+
 
 }

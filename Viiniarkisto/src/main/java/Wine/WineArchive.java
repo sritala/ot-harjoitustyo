@@ -5,6 +5,7 @@
  */
 package Wine;
 
+import Wine.dao.FileUserDao;
 import Wine.domain.WineService;
 import Wine.dao.FileWineDao;
 import Wine.domain.Wine;
@@ -26,22 +27,42 @@ public class WineArchive {
 
     private Scanner input;
     private Map<String, String> inputs;
+    private Map<String, String> setup;
     private WineService wineService;
 
     public WineArchive(Scanner input) throws FileNotFoundException, IOException, Exception {
         this.input = input;
         inputs = new TreeMap<>();
+        setup = new TreeMap<>();
 //        Properties properties = new Properties();
 //        properties.load(new FileInputStream("config.properties"));
 
 //        String wineFile = properties.getProperty("wineFile");
         FileWineDao wineDao = new FileWineDao("wines.txt");
-        wineService = new WineService(wineDao);
+        FileUserDao userDao = new FileUserDao("users.txt");
+        wineService = new WineService(wineDao, userDao);
 
-        inputs.put("x", "x lopeta");
+        setup.put("1", "kirjaudu sisään");
+
+        inputs.put("x", "x kirjaudu ulos");
         inputs.put("1", "1 lisää viini");
         inputs.put("2", "2 listaa viinit");
         inputs.put("3", "3 poista viini");
+    }
+
+    public void setup() {
+        System.out.println("Kirjaudu sisään");
+        while (true) {
+            System.out.println();
+            System.out.print("Käyttäjätunnus: ");
+            String user = input.nextLine();
+            wineService.login(user);
+            if (wineService.getLoggedUser() != null) {
+                start();
+
+            }
+        }
+
     }
 
     public void start() {
@@ -50,49 +71,53 @@ public class WineArchive {
             printInstruction();
             System.out.println();
             System.out.print("komento: ");
-            String komento = input.nextLine();
-            if (!inputs.keySet().contains(komento)) {
+            String command = input.nextLine();
+            if (!inputs.keySet().contains(command)) {
                 System.out.println("virheellinen komento.");
             }
 
-            if (komento.equals("x")) {
+            if (command.equals("x")) {
+                wineService.logout();
                 break;
-            } else if (komento.equals("1")) {
+            } else if (command.equals("1")) {
                 addWine();
-            } else if (komento.equals("2")) {
-                 List<Wine>wineList; 
-              wineList = getWines();
-           
+            } else if (command.equals("2")) {
+                List<Wine> wineList;
+                wineList = getWines();
+
                 for (int i = 0; i < wineList.size(); i++) {
-                    System.out.println("Viini:"+wineList.get(i).getName());
-                     System.out.println("Vuosi"+wineList.get(i).getYear());
-                      System.out.println("Tuotantomaa"+wineList.get(i).getCountry());
-                      System.out.println("");
-                    
+                    System.out.println("Viini:" + wineList.get(i).getName());
+                    System.out.println("Vuosi" + wineList.get(i).getYear());
+                    System.out.println("Tuotantomaa" + wineList.get(i).getCountry());
+                    System.out.println("");
+
                 }
-                
-                
-                
-            }else if (komento.equals("3")) {
+
+            } else if (command.equals("3")) {
                 delete();
 
+            }
         }
+
     }
- }
-      
+
+    public void printSetupInstruction() {
+        System.out.println();
+        for (String command : this.setup.values()) {
+            System.out.println(command);
+
+        }
+
+    }
 
     public void printInstruction() {
-        ArrayList<Wine>winelist = new ArrayList();
-  
-        System.out.println();
-        for (String komento : this.inputs.values()) {
-            System.out.println(komento);
-                      
 
-           
+        System.out.println();
+        for (String command : this.inputs.values()) {
+            System.out.println(command);
+
         }
-   //       System.out.println( inputs.values());
-       
+
     }
 
     public void addWine() {
@@ -106,15 +131,15 @@ public class WineArchive {
     }
 
     private List<Wine> getWines() {
-   
-   
-        System.out.println("tulostus winearchive"+ wineService.getWines());
+
+        System.out.println("tulostus winearchive" + wineService.getWines());
         return wineService.getWines();
-        
+
     }
 
     private void delete() {
-      ArrayList<Wine>winelist = new ArrayList();
-      wineService.delete();
+        System.out.print("Poistettava viini: ");
+        String name = input.nextLine();
+        wineService.delete(name);
     }
 }
