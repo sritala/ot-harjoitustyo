@@ -11,6 +11,8 @@ import java.io.FileWriter;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -58,7 +60,7 @@ public class FileWineDao implements WineDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Wine wine : this.wines) {
-                writer.write(wine.getId() + ";" + wine.getYear()+ ";" + wine.getCountry()+ ";" + wine.getName() + "\n");
+                writer.write(wine.getId() + ";" + wine.getYear() + ";" + wine.getCountry() + ";" + wine.getName() + "\n");
             }
         }
     }
@@ -72,13 +74,21 @@ public class FileWineDao implements WineDao {
     public void delete(String name) throws Exception {
         for (int i = 0; i < this.wines.size(); i++) {
             Wine wine = this.wines.get(i);
-            if(wine.getName().equalsIgnoreCase(name)){
+            if (wine.getName().equalsIgnoreCase(name)) {
                 this.wines.remove(i);
             }
             save();
         }
-        
-     
     }
 
+    @Override
+    public void updateWine(int id, int year, String country, String name) throws Exception {
+        Wine wine = this.wines.get(id);
+        wine.setYear(year);
+        wine.setCountry(country);
+        wine.setName(name);
+        this.wines.set(id, wine);
+        save();
+
+    }
 }

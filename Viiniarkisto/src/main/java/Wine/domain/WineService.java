@@ -47,6 +47,9 @@ public class WineService {
         return wineDao.getAll();
     }
 
+    /**
+     * Viinin poistaminen
+     */
     public void delete(String name) {
         try {
             wineDao.delete(name);
@@ -66,11 +69,18 @@ public class WineService {
 //        }
 //        return apu;
 //    }
+    /**
+     * Kirjautuminen käyttäjätunnuksella
+     *
+     * @param username luotavan käyttäjän tunnus
+     *
+     * @return luonnin onnistumisstatus
+     */
     public boolean login(String username) {
         User user = userDao.findByUsername(username);
         if (user == null) {
             return false;
-            
+
         }
         loggedIn = user;
 
@@ -100,6 +110,22 @@ public class WineService {
     }
 
     /**
+     * Viinin muokkaaminen
+     *
+     * @param id viinin id
+     * @param year luotavan viinin valmistusvuosi
+     * @param country luotavan viinin valmistusmaa
+     * @param name luotavan viinin nimi
+     */
+    public void updateWine(int id, int year, String country, String name) {
+        try {
+            wineDao.updateWine(id, year, country, name);
+        } catch (Exception ex) {
+            System.out.println(ex);
+        }
+    }
+
+    /**
      * uuden käyttäjän luominen
      *
      * @param username käyttäjätunnus
@@ -119,5 +145,4 @@ public class WineService {
 //
 //        return true;
 //    }
-
 }

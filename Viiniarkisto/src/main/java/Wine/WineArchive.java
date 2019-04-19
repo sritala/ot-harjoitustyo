@@ -48,6 +48,7 @@ public class WineArchive {
         inputs.put("1", "1 lisää viini");
         inputs.put("2", "2 listaa viinit");
         inputs.put("3", "3 poista viini");
+        inputs.put("4", "4 muokkaa viiniä");
     }
 
     public void setup() {
@@ -82,32 +83,21 @@ public class WineArchive {
             } else if (command.equals("1")) {
                 addWine();
             } else if (command.equals("2")) {
-                List<Wine> wineList;
-                wineList = getWines();
-
-                for (int i = 0; i < wineList.size(); i++) {
-                    System.out.println("Viini:" + wineList.get(i).getName());
-                    System.out.println("Vuosi" + wineList.get(i).getYear());
-                    System.out.println("Tuotantomaa" + wineList.get(i).getCountry());
-                    System.out.println("");
-
-                }
-
+                printWines();
             } else if (command.equals("3")) {
                 delete();
-
+            } else if (command.equals("4")) {
+                updateWine();
             }
-        }
 
+        }
     }
 
     public void printSetupInstruction() {
         System.out.println();
         for (String command : this.setup.values()) {
             System.out.println(command);
-
         }
-
     }
 
     public void printInstruction() {
@@ -118,6 +108,31 @@ public class WineArchive {
 
         }
 
+    }
+
+    public void printWines() {
+        List<Wine> wineList;
+        wineList = getWines();
+
+        for (int i = 0; i < wineList.size(); i++) {
+            Wine wine = wineList.get(i);
+            printWine(wine);
+        }
+    }
+
+    public void printWine(Wine wine) {
+        System.out.println("Id: " + wine.getId());
+        System.out.println("Nimi: " + wine.getName());
+        System.out.println("Valmistusvuosi: " + wine.getYear());
+        System.out.println("Tuotantomaa: " + wine.getCountry());
+        System.out.println();
+    }
+
+    public void printWineById(int index) {
+        List<Wine> wineList;
+        wineList = getWines();
+        Wine printableWine = wineList.get(index);
+        printWine(printableWine);
     }
 
     public void addWine() {
@@ -131,15 +146,32 @@ public class WineArchive {
     }
 
     private List<Wine> getWines() {
-
-        System.out.println("tulostus winearchive" + wineService.getWines());
         return wineService.getWines();
-
     }
 
     private void delete() {
         System.out.print("Poistettava viini: ");
         String name = input.nextLine();
         wineService.delete(name);
+    }
+
+    private void updateWine() {
+        System.out.println();
+        printWines();
+        System.out.println();
+        System.out.print("Muokattavan viinin id:");
+        int id = Integer.parseInt(input.nextLine());
+        int realIndex = id - 1;
+        System.out.print("Viinin vuosi: ");
+        int year = Integer.parseInt(input.nextLine());
+        System.out.print("Viinin tuotantomaa: ");
+        String country = input.nextLine();
+        System.out.print("Viinin nimi: ");
+        String name = input.nextLine();
+        wineService.updateWine(realIndex, year, country, name);
+        System.out.println("");
+        System.out.println("Päivitetty viini");
+        printWineById(realIndex);
+
     }
 }

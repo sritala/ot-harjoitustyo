@@ -10,7 +10,7 @@ package Wine.domain;
  * @author susanna
  */
 public class Wine {
-    
+
     private int id;
     private int year;
     private String country;
@@ -23,25 +23,36 @@ public class Wine {
 //        this.country = prodCountry;
 //        this.name = wineName;
 //    }
-    
     public Wine(int prodYear, String prodCountry, String wineName) {
         this.year = prodYear;
         this.country = prodCountry;
         this.name = wineName;
     }
-    
+
     public int getYear() {
         return this.year;
     }
-    
+
     public void setId(int param) {
         this.id = param;
+    }
+
+    public void setName(String param) {
+        this.name = param;
+    }
+
+    public void setCountry(String param) {
+        this.country = param;
+    }
+
+    public void setYear(int param) {
+        this.year = param;
     }
 
     public int getId() {
         return this.id;
     }
-    
+
     public String getCountry() {
         return this.country;
     }

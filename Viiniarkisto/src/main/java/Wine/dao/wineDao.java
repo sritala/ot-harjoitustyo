@@ -20,4 +20,6 @@ public interface WineDao {
     
     void delete(String name) throws Exception;
     
+    void updateWine(int id, int Year, String country, String name) throws Exception;
+    
 }
