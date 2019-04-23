@@ -28,7 +28,7 @@ User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käy
 WineService vastaa toiminnallisista kokonaisuuksista ja tarjoaa muun muassa seuraavanlaisia metodeita.
 
 Viineille:
-- boolean createWine(int year, String country, String name)
+- boolean createWine(int year, String country, String name, String adder)
 - void deleteWine(String name)
 
 Käyttäjälle:
