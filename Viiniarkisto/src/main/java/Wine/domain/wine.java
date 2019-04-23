@@ -15,6 +15,7 @@ public class Wine {
     private int year;
     private String country;
     private String name;
+    private String adder;
 //    private Brewery brewery;
 
 //    public Wine(int id, int prodYear, String prodCountry, String wineName) {
@@ -23,14 +24,23 @@ public class Wine {
 //        this.country = prodCountry;
 //        this.name = wineName;
 //    }
-    public Wine(int prodYear, String prodCountry, String wineName) {
+    public Wine(int prodYear, String prodCountry, String wineName, String adder) {
         this.year = prodYear;
         this.country = prodCountry;
         this.name = wineName;
+        this.adder = adder;
+    }
+    
+    public String getAdder(){
+        return this.adder;
     }
 
     public int getYear() {
         return this.year;
+    }
+    public void setAdder(String param){
+        this.adder = param;
+        
     }
 
     public void setId(int param) {

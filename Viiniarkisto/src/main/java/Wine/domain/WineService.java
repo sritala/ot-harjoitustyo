@@ -2,10 +2,7 @@ package Wine.domain;
 
 import Wine.dao.UserDao;
 import Wine.dao.WineDao;
-import Wine.domain.Wine;
 import java.util.List;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -30,17 +27,15 @@ public class WineService {
      * @param country luotavan viinin valmistusmaa
      * @param name luotavan viinin nimi
      *
-     * @return luonnin onnistumisstatus
      */
-    public boolean createWine(int year, String country, String name) {
-        Wine wine = new Wine(year, country, name);
+    public void createWine(int year, String country, String name) {
+        String user = loggedIn.getUsername();
+        Wine wine = new Wine(year, country, name, user);
         try {
             wineDao.create(wine);
-//            System.out.println("Viini lisätty!");
         } catch (Exception ex) {
-            return false;
+            System.out.println("Errori: " + ex);;
         }
-        return true;
     }
 
     public List<Wine> getWines() {
@@ -49,6 +44,8 @@ public class WineService {
 
     /**
      * Viinin poistaminen
+     *
+     * @param name Poistettavan viinin nimi
      */
     public void delete(String name) {
         try {
@@ -58,17 +55,6 @@ public class WineService {
         }
     }
 
-//    public String getWines(){
-//        List<Wine> wines = wineDao.getAll();
-//        String apu = "";
-//        for(Wine wine: wines){
-//            apu += "Viinin id: " + wine.getId() + "\n";
-//            apu += "Vuosi: " + wine.getYear() + "\n";
-//            apu += "Valmistusmaa: " + wine.getCountry() + "\n";
-//            apu += "Nimi: " + wine.getName() + "\n";
-//        }
-//        return apu;
-//    }
     /**
      * Kirjautuminen käyttäjätunnuksella
      *
@@ -85,12 +71,6 @@ public class WineService {
         loggedIn = user;
 
         return true;
-    }
-
-    public void create(String username) throws Exception {
-        User newUser = new User(username);
-        userDao.create(newUser);
-        login(newUser.getUsername());
     }
 
     /**
@@ -113,9 +93,9 @@ public class WineService {
      * Viinin muokkaaminen
      *
      * @param id viinin id
-     * @param year luotavan viinin valmistusvuosi
-     * @param country luotavan viinin valmistusmaa
-     * @param name luotavan viinin nimi
+     * @param year muokattavan viinin valmistusvuosi
+     * @param country muokattavan viinin valmistusmaa
+     * @param name muokattavan viinin nimi
      */
     public void updateWine(int id, int year, String country, String name) {
         try {
@@ -132,17 +112,20 @@ public class WineService {
      *
      * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
      */
-//    public boolean createUser(String username, String name) {
-//        if (userDao.findByUsername(username) != null) {
-//            return false;
-//        }
-//        User user = new User(username);
-//        try {
-//            userDao.create(user);
-//        } catch (Exception e) {
-//            return false;
-//        }
-//
-//        return true;
-//    }
+    public boolean createUser(String username) {
+        if (userDao.findByUsername(username) != null) {
+            System.out.println("Käyttäjä jo olemassa, valitse toinen käyttäjänimi");
+            return false;
+        }
+        User newUser = new User(username);
+        try {
+            userDao.create(newUser);
+            login(newUser.getUsername());
+        } catch (Exception e) {
+            System.out.println(e);
+            return false;
+        }
+
+        return true;
+    }
 }

@@ -34,7 +34,8 @@ public class FileWineDao implements WineDao {
                 int year = Integer.parseInt(parts[1]);
                 String country = parts[2];
                 String name = parts[3];
-                Wine wine = new Wine(year, country, name);
+                String adder = parts[4];
+                Wine wine = new Wine(year, country, name, adder);
                 wine.setId(generateId());
                 this.wines.add(wine);
             }
@@ -51,6 +52,7 @@ public class FileWineDao implements WineDao {
 
     @Override
     public Wine create(Wine wine) throws Exception {
+        System.out.println("FileWineDao " + wine.getAdder());
         wine.setId(generateId());
         this.wines.add(wine);
         save();
@@ -60,7 +62,8 @@ public class FileWineDao implements WineDao {
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Wine wine : this.wines) {
-                writer.write(wine.getId() + ";" + wine.getYear() + ";" + wine.getCountry() + ";" + wine.getName() + "\n");
+//                System.out.println("Wine to be saved (name) " + wine.getName() + " // (adder) " + wine.getAdder());
+                writer.write(wine.getId() + ";" + wine.getYear() + ";" + wine.getCountry() + ";" + wine.getName() + ";" + wine.getAdder() + "\n");
             }
         }
     }

@@ -43,6 +43,8 @@ public class WineArchive {
         wineService = new WineService(wineDao, userDao);
 
         setup.put("1", "kirjaudu sisään");
+        setup.put("2", "luo uusi käyttäjä");
+        setup.put("x", "lopeta");
 
         inputs.put("x", "x kirjaudu ulos");
         inputs.put("1", "1 lisää viini");
@@ -52,22 +54,44 @@ public class WineArchive {
     }
 
     public void setup() {
-        System.out.println("Kirjaudu sisään");
+        System.out.println("Tervetuloa");
         while (true) {
             System.out.println();
-            System.out.print("Käyttäjätunnus: ");
-            String user = input.nextLine();
-            wineService.login(user);
-            if (wineService.getLoggedUser() != null) {
-                start();
-
+            printSetupInstruction();
+            System.out.println();
+            System.out.print("komento: ");
+            String command = input.nextLine();
+            if (!setup.keySet().contains(command)) {
+                System.out.println("virheellinen komento.");
             }
+
+            if (command.equals("x")) {
+                break;
+            } else if (command.equals("1")) {
+                System.out.print("Käyttäjätunnus: ");
+                String user = input.nextLine();
+                wineService.login(user);
+                if (wineService.getLoggedUser() != null) {
+                    start();
+                }
+
+            } else if (command.equals("2")) {
+                System.out.print("Uusi käyttäjätunnus: ");
+                String newUser = input.nextLine();
+                wineService.createUser(newUser);
+                if (wineService.getLoggedUser() != null) {
+                    start();
+
+                }
+            }
+
         }
 
     }
 
     public void start() {
         System.out.println("Viiniarkisto");
+        System.out.println("Hei " + wineService.getLoggedUser().getUsername());
         while (true) {
             printInstruction();
             System.out.println();
@@ -113,9 +137,12 @@ public class WineArchive {
     public void printWines() {
         List<Wine> wineList;
         wineList = getWines();
+        
+        String currentUser = wineService.getLoggedUser().getUsername();
 
         for (int i = 0; i < wineList.size(); i++) {
             Wine wine = wineList.get(i);
+            if(wine.getAdder().equalsIgnoreCase(currentUser))
             printWine(wine);
         }
     }
