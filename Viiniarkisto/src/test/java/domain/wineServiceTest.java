@@ -25,8 +25,8 @@ public class WineServiceTest {
     public void setUp() throws Exception {
         wineDao = new FakeWineDao();
         userDao = new FakeUserDao();
-        Wine w1 = new Wine(2013, "Italia", "Toscana");
-        Wine w2 = new Wine(2016, "Espanja", "Rioja");
+        Wine w1 = new Wine(2013, "Italia", "Toscana", "Pekka");
+        Wine w2 = new Wine(2016, "Espanja", "Rioja", "Pekka");
         User u1 = new User("testi");
         userDao.create(u1);
         wineDao.create(w1);
@@ -57,15 +57,14 @@ public class WineServiceTest {
 
         assertEquals(null, service.getLoggedUser());
     }
-//
-//    @Test
-//    public void existingUserCanLogIn() {
-//        boolean result = service.login("testi");
-//        assertTrue(result);
-//
-//        User loggedIn = service.getLoggedUser();
-//        assertEquals("Testi", loggedIn.getUsername());
-//    }
+
+    @Test
+    public void existingUserCanLogIn() {
+        boolean result = service.login("testi");
+        assertTrue(result);
+        User loggedIn = service.getLoggedUser();
+        assertEquals("Testi", loggedIn.getUsername());
+    }
 
     @Test
     public void loggedInUserCanLogout() {

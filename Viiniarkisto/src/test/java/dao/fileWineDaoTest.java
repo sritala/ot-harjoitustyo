@@ -36,7 +36,7 @@ public class FileWineDaoTest {
 
     @Test
     public void createdWinesAreListedCorrectly() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss"));
+        dao.create(new Wine(2014, "Saksa", "Schloss","Maija"));
 
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
@@ -49,7 +49,7 @@ public class FileWineDaoTest {
 
     @Test
     public void correctListingAfterDeletedWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
         
