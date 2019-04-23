@@ -42,9 +42,9 @@ public class WineArchive {
         FileUserDao userDao = new FileUserDao("users.txt");
         wineService = new WineService(wineDao, userDao);
 
-        setup.put("1", "kirjaudu sisään");
-        setup.put("2", "luo uusi käyttäjä");
-        setup.put("x", "lopeta");
+        setup.put("1", "1 kirjaudu sisään");
+        setup.put("2", "2 luo uusi käyttäjä");
+        setup.put("x", "x lopeta");
 
         inputs.put("x", "x kirjaudu ulos");
         inputs.put("1", "1 lisää viini");
@@ -54,7 +54,9 @@ public class WineArchive {
     }
 
     public void setup() {
-        System.out.println("Tervetuloa");
+        System.out.println("Tervetuloa!");
+        System.out.println("");
+        System.out.println("Valitse yksi seuraavista vaihtoehdoista:");
         while (true) {
             System.out.println();
             printSetupInstruction();
@@ -90,8 +92,10 @@ public class WineArchive {
     }
 
     public void start() {
+        System.out.println("");
         System.out.println("Viiniarkisto");
-        System.out.println("Hei " + wineService.getLoggedUser().getUsername());
+        System.out.println("");
+        System.out.println("Hei " + wineService.getLoggedUser().getUsername()+ ",");
         while (true) {
             printInstruction();
             System.out.println();
@@ -137,13 +141,14 @@ public class WineArchive {
     public void printWines() {
         List<Wine> wineList;
         wineList = getWines();
-        
+
         String currentUser = wineService.getLoggedUser().getUsername();
 
         for (int i = 0; i < wineList.size(); i++) {
             Wine wine = wineList.get(i);
-            if(wine.getAdder().equalsIgnoreCase(currentUser))
-            printWine(wine);
+            if (wine.getAdder().equalsIgnoreCase(currentUser)) {
+                printWine(wine);
+            }
         }
     }
 

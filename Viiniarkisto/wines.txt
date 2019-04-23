@@ -1,1 +1,3 @@
-2;2015;Italia;Valkkari;susanna
+1;2015;Italia;Valkkari;susanna
+2;2016;Italia;Tommasi;masa
+3;2018;Saksa;Riesling;masa
