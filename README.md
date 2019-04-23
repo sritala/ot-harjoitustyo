@@ -7,7 +7,7 @@ Tämä on harjoitustyö Ohjelmistotekniikan kurssille
 
 [Arkkitehtuurikuvaus](https://github.com/sritala/ot-harjoitustyo/tree/master/dokumentaatio/arkkitehtuuri.md)
 
-[Vaatimusmäärittely](https://github.com/sritala/ot-harjoitustyo/tree/master/dokumentaatio/vaatimusmaarittely)
+[Vaatimusmäärittely](https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/vaatimusmaarittely.md)
 
 [Työaikakirjanpito](https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/tuntikirjanpito.md)
 
