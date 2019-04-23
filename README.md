@@ -2,6 +2,9 @@
 
 Tämä on harjoitustyö Ohjelmistotekniikan kurssille 
 
+
+[Käyttöohje](https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kayttoohje.md)
+
 [Arkkitehtuurikuvaus](https://github.com/sritala/ot-harjoitustyo/tree/master/dokumentaatio/arkkitehtuuri.md)
 
 [Vaatimusmäärittely](https://github.com/sritala/ot-harjoitustyo/tree/master/dokumentaatio/vaatimusmaarittely)
