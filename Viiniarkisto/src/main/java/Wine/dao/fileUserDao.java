@@ -7,6 +7,10 @@ import java.util.List;
 import java.util.Scanner;
 import Wine.domain.User;
 
+/**
+ * UserDaon luokka, joka mahdollistaa käyttäjän luomisen ja tallentamisen
+ *
+ */
 public class FileUserDao implements UserDao {
 
     private List<User> users;

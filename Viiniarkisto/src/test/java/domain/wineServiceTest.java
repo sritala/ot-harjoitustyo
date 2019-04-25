@@ -11,6 +11,7 @@ import Wine.domain.WineService;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
@@ -58,13 +59,42 @@ public class WineServiceTest {
         assertEquals(null, service.getLoggedUser());
     }
 
-//    @Test
-//    public void existingUserCanLogIn() {
-//        boolean result = service.login("testi");
-//        assertTrue(result);
-//        User loggedIn = service.getLoggedUser();
-//        assertEquals("Testi", loggedIn.getUsername());
-//    }
+    @Test
+    public void updateChangesWineCorrectly() throws Exception {
+        service.updateWine(0, 2015, "Italia", "Jotain");
+        List<Wine> wines = service.getWines();
+        Wine newFirst = wines.get(0);
+        assertEquals(2015, newFirst.getYear());
+        assertEquals("Italia", newFirst.getCountry());
+        assertEquals("Jotain", newFirst.getName());
+    }
+
+    @Test
+    public void deletingWineWorks() throws Exception {
+        List<Wine> wines = service.getWines();
+        int length = wines.size();
+        service.delete("Toscana");
+        assertEquals(length - 1, service.getWines().size());
+
+    }
+
+    @Test
+    public void creatingWineWorks() throws Exception {
+        User first = userDao.findByUsername("testi");
+        service.login(first.getUsername());
+        List<Wine> wines = service.getWines();
+        int length = wines.size();
+        service.createWine(2019, "Testimaa", "Testiviini");
+        assertEquals(length + 1, service.getWines().size());
+    }
+
+    @Test
+    public void existingUserCanLogIn() {
+        boolean result = service.login("testi");
+        assertTrue(result);
+        User loggedIn = service.getLoggedUser();
+        assertEquals("testi", loggedIn.getUsername());
+    }
 
     @Test
     public void loggedInUserCanLogout() {
@@ -72,6 +102,15 @@ public class WineServiceTest {
         service.logout();
 
         assertEquals(null, service.getLoggedUser());
+    }
+
+    @Test
+    public void canCreateNewUser() throws Exception {
+        assertEquals(true, service.createUser("testi2"));
+    }
+     @Test
+    public void cantCreateNewUserWithExistingUsername() throws Exception {
+        assertEquals(false, service.createUser("testi"));
     }
 
 }

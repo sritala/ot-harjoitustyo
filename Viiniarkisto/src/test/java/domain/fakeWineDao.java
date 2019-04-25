@@ -38,7 +38,11 @@ public class FakeWineDao implements WineDao {
 
     @Override
     public void updateWine(int id, int year, String country, String name) throws Exception {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Wine found = this.wines.get(id);
+        found.setYear(year);
+        found.setCountry(country);
+        found.setName(name);
+        this.wines.set(id, found);
     }
 
 }

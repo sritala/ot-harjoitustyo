@@ -36,7 +36,7 @@ public class FileWineDaoTest {
 
     @Test
     public void createdWinesAreListedCorrectly() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss","Maija"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
 
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
@@ -52,17 +52,37 @@ public class FileWineDaoTest {
         dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
-        
+
         dao.delete("Schloss");
         wines = dao.getAll();
         assertEquals(0, wines.size());
     }
+        @Test
+    public void correctListingAfterDeletedNonExistingWine() throws Exception {
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
+        List<Wine> wines = dao.getAll();
+        assertEquals(1, wines.size());
+
+        dao.delete("Random");
+        wines = dao.getAll();
+        assertEquals(1, wines.size());
+    }
+    
 
     @Test
     public void winesEmptyByDefault() {
         List<Wine> wines = dao.getAll();
         assertEquals(0, wines.size());
 
+    }
+
+    @Test
+    public void correctListingAfterUpdatedWine() throws Exception {
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
+        List<Wine> wines = dao.getAll();
+        dao.updateWine(0, 1999, "Pakistan", "öalksdöalksd");
+        Wine updatedFirst = wines.get(0);
+        assertEquals(1999, updatedFirst.getYear());
     }
 
     @After

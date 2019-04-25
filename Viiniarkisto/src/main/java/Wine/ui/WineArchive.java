@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package Wine;
+package Wine.ui;
 
 import Wine.dao.FileUserDao;
 import Wine.domain.WineService;
@@ -21,7 +16,7 @@ import java.util.TreeMap;
 
 /**
  *
- * @author susanna
+ * Sovelluslogiikasta vastaava luokka
  */
 public class WineArchive {
 
@@ -53,7 +48,11 @@ public class WineArchive {
         inputs.put("4", "4 muokkaa viiniä");
     }
 
-    public void setup() {
+    /**
+     * Jos kirjautuminen on onnistunut
+     *
+     */
+    public void setup() throws Exception {
         System.out.println("Tervetuloa!");
         System.out.println("");
         System.out.println("Valitse yksi seuraavista vaihtoehdoista:");
@@ -91,11 +90,15 @@ public class WineArchive {
 
     }
 
-    public void start() {
+    /**
+     * Käynnistyminen
+     */
+
+    public void start() throws Exception {
         System.out.println("");
         System.out.println("Viiniarkisto");
         System.out.println("");
-        System.out.println("Hei " + wineService.getLoggedUser().getUsername()+ ",");
+        System.out.println("Hei " + wineService.getLoggedUser().getUsername() + ",");
         while (true) {
             printInstruction();
             System.out.println();
@@ -152,14 +155,29 @@ public class WineArchive {
         }
     }
 
+    /**
+     * Viinien listautuminen
+     *
+     * @param year luotavan viinin tuotantovuosi
+     * @param country luotavan viinin tuotantomaa
+     * @param name luotavan viinin nimi
+     * @param grape luotavan viinin rypälelaji
+     * @param food luotavan viinin ruokaehdotus
+     */
     public void printWine(Wine wine) {
         System.out.println("Id: " + wine.getId());
         System.out.println("Nimi: " + wine.getName());
+        //System.out.println("Rypälelaji:" +wine.getGrape());
         System.out.println("Valmistusvuosi: " + wine.getYear());
         System.out.println("Tuotantomaa: " + wine.getCountry());
+        //System.out.println("Ruokaehdotus: " + wine.getFood());
+
         System.out.println();
     }
 
+    /*
+    *Viinien listautuminen indeksittäin
+     */
     public void printWineById(int index) {
         List<Wine> wineList;
         wineList = getWines();
@@ -167,13 +185,26 @@ public class WineArchive {
         printWine(printableWine);
     }
 
-    public void addWine() {
+    /**
+     * Uuden viinin lisääminen kirjautuneena olevalle käyttäjälle
+     *
+     * @param year luotavan viinin tuotantovuosi
+     * @param country luotavan viinin tuotantomaa
+     * @param name luotavan viinin nimi
+     * @param grape luotavan viinin rypälelaji
+     * @param food luotavan viinin ruokaehdotus
+     */
+    public void addWine() throws Exception {
         System.out.print("Viinin vuosi: ");
         int year = Integer.parseInt(input.nextLine());
         System.out.print("Viinin tuotantomaa: ");
         String country = input.nextLine();
         System.out.print("Viinin nimi: ");
         String name = input.nextLine();
+        // System.out.println("Viinin rypälelaji: ");
+        // String grape = input.nextLine();
+        // System.out.println("Ruokaehdotus: ");
+        // String food = input.nextLine();     
         wineService.createWine(year, country, name);
     }
 
@@ -181,13 +212,19 @@ public class WineArchive {
         return wineService.getWines();
     }
 
-    private void delete() {
+    /*
+    *Viinin poistaminen
+     */
+    private void delete() throws Exception {
         System.out.print("Poistettava viini: ");
         String name = input.nextLine();
         wineService.delete(name);
     }
 
-    private void updateWine() {
+    /*
+    *Viinin muokkaaminen
+     */
+    private void updateWine() throws Exception {
         System.out.println();
         printWines();
         System.out.println();
@@ -200,6 +237,11 @@ public class WineArchive {
         String country = input.nextLine();
         System.out.print("Viinin nimi: ");
         String name = input.nextLine();
+        //System.out.println("Viinin rypälelaji: ");
+        //String grape = input.nextLine();
+        //System.out.println("Ruokaehdotus: ");
+        //String food = input.nextLine();
+
         wineService.updateWine(realIndex, year, country, name);
         System.out.println("");
         System.out.println("Päivitetty viini");

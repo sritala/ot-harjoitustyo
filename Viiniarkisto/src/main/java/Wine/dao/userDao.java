@@ -2,8 +2,7 @@
 package Wine.dao;
 
 /**
- *
- * @author susanna
+ * WineServicen rajapinta
  */
 
 import java.util.List;

@@ -1,13 +1,7 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Wine.domain;
 
 /**
- *
- * @author susanna
+ * Yksittäistä viiniä kuvaava luokka
  */
 public class Wine {
 
@@ -16,7 +10,8 @@ public class Wine {
     private String country;
     private String name;
     private String adder;
-//    private Brewery brewery;
+    //private String grape;
+    //private String food;
 
 //    public Wine(int id, int prodYear, String prodCountry, String wineName) {
 //        this.id = id;
@@ -29,18 +24,22 @@ public class Wine {
         this.country = prodCountry;
         this.name = wineName;
         this.adder = adder;
+        //this.grape = grape;
+        //this.food = food;
+
     }
-    
-    public String getAdder(){
+
+    public String getAdder() {
         return this.adder;
     }
 
     public int getYear() {
         return this.year;
     }
-    public void setAdder(String param){
+
+    public void setAdder(String param) {
         this.adder = param;
-        
+
     }
 
     public void setId(int param) {
@@ -58,6 +57,9 @@ public class Wine {
     public void setYear(int param) {
         this.year = param;
     }
+    // public void setGrape (int param){
+    //this.grape = param;
+//} 
 
     public int getId() {
         return this.id;
@@ -70,5 +72,11 @@ public class Wine {
     public String getName() {
         return this.name;
     }
+    //public String getGrape(){
+    //return this.grape;
+//}
+    //public String getFood(){
+    //return this.food;
+//}
 
 }

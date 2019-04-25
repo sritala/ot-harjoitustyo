@@ -5,8 +5,7 @@ import Wine.dao.WineDao;
 import java.util.List;
 
 /**
- *
- * @author susanna
+ * Sovelluslogiikasta vastaava luokka
  */
 public class WineService {
 
@@ -26,16 +25,14 @@ public class WineService {
      * @param year luotavan viinin valmistusvuosi
      * @param country luotavan viinin valmistusmaa
      * @param name luotavan viinin nimi
-     *
+     * @param grape luotavan viinin laji
+     * @param food viinin ruokaehdotus
+     * @throws java.lang.Exception
      */
-    public void createWine(int year, String country, String name) {
+    public void createWine(int year, String country, String name) throws Exception {
         String user = loggedIn.getUsername();
         Wine wine = new Wine(year, country, name, user);
-        try {
-            wineDao.create(wine);
-        } catch (Exception ex) {
-            System.out.println("Errori: " + ex);;
-        }
+        wineDao.create(wine);
     }
 
     public List<Wine> getWines() {
@@ -46,13 +43,10 @@ public class WineService {
      * Viinin poistaminen
      *
      * @param name Poistettavan viinin nimi
+     * @throws java.lang.Exception
      */
-    public void delete(String name) {
-        try {
-            wineDao.delete(name);
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
+    public void delete(String name) throws Exception {
+        wineDao.delete(name);
     }
 
     /**
@@ -96,13 +90,12 @@ public class WineService {
      * @param year muokattavan viinin valmistusvuosi
      * @param country muokattavan viinin valmistusmaa
      * @param name muokattavan viinin nimi
+     * @param grape muokattavan viinin laji
+     * @param food muokattavan viinin ruokaehdotus
+     * @throws java.lang.Exception
      */
-    public void updateWine(int id, int year, String country, String name) {
-        try {
-            wineDao.updateWine(id, year, country, name);
-        } catch (Exception ex) {
-            System.out.println(ex);
-        }
+    public void updateWine(int id, int year, String country, String name) throws Exception {
+        wineDao.updateWine(id, year, country, name);
     }
 
     /**
@@ -111,21 +104,17 @@ public class WineService {
      * @param username käyttäjätunnus
      *
      * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
+     * @throws java.lang.Exception
      */
-    public boolean createUser(String username) {
+    public boolean createUser(String username) throws Exception {
         if (userDao.findByUsername(username) != null) {
             System.out.println("Käyttäjä jo olemassa, valitse toinen käyttäjänimi");
             return false;
         }
         User newUser = new User(username);
-        try {
-            userDao.create(newUser);
-            login(newUser.getUsername());
-        } catch (Exception e) {
-            System.out.println(e);
-            return false;
-        }
-
+        userDao.create(newUser);
+        login(newUser.getUsername());
         return true;
     }
+
 }

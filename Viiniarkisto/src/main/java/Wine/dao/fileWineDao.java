@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package Wine.dao;
 
 import Wine.domain.Wine;
@@ -16,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * @author susanna
+ * WineDaon luokka, joka vastaa viinien tallennuksesta sekä luonnista
  */
 public class FileWineDao implements WineDao {
 
