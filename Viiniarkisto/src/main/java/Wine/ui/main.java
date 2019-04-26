@@ -5,11 +5,11 @@ import java.util.Scanner;
 /**
  * main luokka
  */
-public class PaaOhjelma {
+public class main {
 
     public static void main(String[] args) throws Exception {
         Scanner input = new Scanner(System.in);
-        WineArchive va = new WineArchive(input);
+        Ui va = new Ui(input);
         va.setup();
 
     }

@@ -18,14 +18,14 @@ import java.util.TreeMap;
  *
  * Sovelluslogiikasta vastaava luokka
  */
-public class WineArchive {
+public class Ui {
 
     private Scanner input;
     private Map<String, String> inputs;
     private Map<String, String> setup;
     private WineService wineService;
 
-    public WineArchive(Scanner input) throws FileNotFoundException, IOException, Exception {
+    public Ui(Scanner input) throws FileNotFoundException, IOException, Exception {
         this.input = input;
         inputs = new TreeMap<>();
         setup = new TreeMap<>();
