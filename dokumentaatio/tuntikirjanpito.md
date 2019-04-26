@@ -13,3 +13,5 @@ Tänne kirjataan työhön tehdyt tunnit
 | 16.4  | 6    | Kirjautumismahdollisuutta tehty sekä siihen liittyviä testejä. Testikattavuus n.40%. Kirjautuminen onnistuu tällä hetkellä "susanna" käyttäjätunnuksella. Tällä hetkellä myös kaikki viinit listautuvat mitkä on luotu käyttäjästä riippumatta, mutta sen hiominen siirtyy seuraavalle viikolle. Dokumentaatiota on myös päivitetty ja laitettu oikeaan muotoon. Kansion nimeä en saanut muutettua pieniksi kirjaimiksi, sillä aika loppui, koska ohjelma ei suostunut enää muutoksen jälkeen toimimaan. En viitsinyt siis sitä väkisin muutella, jotta ohjelman toiminta ei hajoaisi juuri ennen viikko palautusta. Joten täytyy yrittää ensi viikolla, jotta checkstyle myös paranisi."
 | 19.4 | 4    | Viinien muokkaamistoiminto luotu. Viinejä voi nyt luoda, listata, muokata sekä poistaa. 
 | 22.4 | 4    | Viiniarkiston kirjautumistoimintoa hiottu niin, että käyttäjän voi luoda ja jokaisella käyttäjällä näkyy vain henkilökohtaisesti luodut viinit. 
+|25.4  | 3    | Testien tekemistä, kattavuus n. 80%
+|26.4  | 2    | Muutoksia nimeen ja jar
