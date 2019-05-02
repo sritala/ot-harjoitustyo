@@ -13,14 +13,8 @@ import java.util.Scanner;
  *
  * @author susanna
  */
-public class main {
+public class Main {
 
-    /**
-     * @param args the command line arguments
-     * @throws Exception
-     * @throws IOException
-     * @throws FileNotFoundException
-     */
     public static void main(String[] args) throws FileNotFoundException, IOException, Exception {
         Scanner input = new Scanner(System.in);
         Ui va = new Ui(input);

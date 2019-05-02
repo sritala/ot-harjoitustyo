@@ -13,12 +13,6 @@ public class Wine {
     private String grape;
     private String food;
 
-//    public Wine(int id, int prodYear, String prodCountry, String wineName) {
-//        this.id = id;
-//        this.year = prodYear;
-//        this.country = prodCountry;
-//        this.name = wineName;
-//    }
     public Wine(int prodYear, String prodCountry, String wineName, String adder, String grape, String food) {
         this.year = prodYear;
         this.country = prodCountry;
