@@ -5,8 +5,8 @@
  */
 package dao;
 
-import Wine.dao.FileUserDao;
-import Wine.dao.UserDao;
+import wine.dao.FileUserDao;
+import wine.dao.UserDao;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
@@ -17,7 +17,7 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
-import Wine.domain.User;
+import wine.domain.User;
 
 /**
  *

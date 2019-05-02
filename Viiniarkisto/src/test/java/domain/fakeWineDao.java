@@ -1,7 +1,7 @@
 package domain;
 
-import Wine.domain.Wine;
-import Wine.dao.WineDao;
+import wine.domain.Wine;
+import wine.dao.WineDao;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,7 +37,7 @@ public class FakeWineDao implements WineDao {
     }
 
     @Override
-    public void updateWine(int id, int year, String country, String name) throws Exception {
+    public void updateWine(int id, int year, String country, String name, String grape, String food) throws Exception {
         Wine found = this.wines.get(id);
         found.setYear(year);
         found.setCountry(country);

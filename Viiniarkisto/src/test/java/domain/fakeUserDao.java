@@ -7,8 +7,8 @@ package domain;
 
 import java.util.ArrayList;
 import java.util.List;
-import Wine.dao.UserDao;
-import Wine.domain.User;
+import wine.dao.UserDao;
+import wine.domain.User;
 
 public class FakeUserDao implements UserDao {
     List<User> users = new ArrayList<>();

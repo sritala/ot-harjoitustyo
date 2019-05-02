@@ -5,9 +5,9 @@ package dao;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Wine.dao.FileWineDao;
-import Wine.domain.Wine;
-import Wine.dao.WineDao;
+import wine.dao.FileWineDao;
+import wine.domain.Wine;
+import wine.dao.WineDao;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.List;
@@ -36,7 +36,7 @@ public class FileWineDaoTest {
 
     @Test
     public void createdWinesAreListedCorrectly() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija", "Valkoviini", "Sushi"));
 
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
@@ -45,11 +45,14 @@ public class FileWineDaoTest {
         assertEquals(2014, wine.getYear());
         assertEquals("Saksa", wine.getCountry());
         assertEquals("Schloss", wine.getName());
+        assertEquals("Valkoviini", wine.getGrape());
+        assertEquals("Sushi", wine.getFood());
+        
     }
 
     @Test
     public void correctListingAfterDeletedWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija","Valkoviini", "Sushi"));
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
 
@@ -59,7 +62,7 @@ public class FileWineDaoTest {
     }
         @Test
     public void correctListingAfterDeletedNonExistingWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija","Valkoviini", "Sushi"));
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
 
@@ -78,9 +81,9 @@ public class FileWineDaoTest {
 
     @Test
     public void correctListingAfterUpdatedWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija","Valkoviini", "Sushi"));
         List<Wine> wines = dao.getAll();
-        dao.updateWine(0, 1999, "Pakistan", "öalksdöalksd");
+        dao.updateWine(0, 1999, "Pakistan", "öalksdöalksd","rftgh", "gyhuj");
         Wine updatedFirst = wines.get(0);
         assertEquals(1999, updatedFirst.getYear());
     }

@@ -5,9 +5,9 @@
  */
 package domain;
 
-import Wine.domain.User;
-import Wine.domain.Wine;
-import Wine.domain.WineService;
+import wine.domain.User;
+import wine.domain.Wine;
+import wine.domain.WineService;
 import java.util.List;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -26,8 +26,8 @@ public class WineServiceTest {
     public void setUp() throws Exception {
         wineDao = new FakeWineDao();
         userDao = new FakeUserDao();
-        Wine w1 = new Wine(2013, "Italia", "Toscana", "Pekka");
-        Wine w2 = new Wine(2016, "Espanja", "Rioja", "Pekka");
+        Wine w1 = new Wine(2013, "Italia", "Toscana", "Pekka","Punaviini", "Pasta");
+        Wine w2 = new Wine(2016, "Espanja", "Rioja", "Pekka", "Punaviini", "Liha");
         User u1 = new User("testi");
         userDao.create(u1);
         wineDao.create(w1);
@@ -61,7 +61,7 @@ public class WineServiceTest {
 
     @Test
     public void updateChangesWineCorrectly() throws Exception {
-        service.updateWine(0, 2015, "Italia", "Jotain");
+        service.updateWine(0, 2015, "Italia", "Jotain", "Punaviini", "Pasta");
         List<Wine> wines = service.getWines();
         Wine newFirst = wines.get(0);
         assertEquals(2015, newFirst.getYear());
@@ -84,7 +84,7 @@ public class WineServiceTest {
         service.login(first.getUsername());
         List<Wine> wines = service.getWines();
         int length = wines.size();
-        service.createWine(2019, "Testimaa", "Testiviini");
+        service.createWine(2019, "Testimaa", "Testiviini", "Testirypäle", "Testiruoka");
         assertEquals(length + 1, service.getWines().size());
     }
 

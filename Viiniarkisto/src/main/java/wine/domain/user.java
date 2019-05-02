@@ -1,4 +1,4 @@
-package Wine.domain;
+package wine.domain;
 
 /**
  * Järjestelmän käyttäjää edustava luokka

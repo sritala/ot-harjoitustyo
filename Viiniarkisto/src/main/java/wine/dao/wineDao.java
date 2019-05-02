@@ -1,6 +1,6 @@
-package Wine.dao;
+package wine.dao;
 
-import Wine.domain.Wine;
+import wine.domain.Wine;
 import java.util.List;
 
 /**
@@ -14,6 +14,6 @@ public interface WineDao {
 
     void delete(String name) throws Exception;
 
-    void updateWine(int id, int Year, String country, String name) throws Exception;
+    void updateWine(int id, int year, String country, String name, String grape, String food) throws Exception;
 
 }

@@ -1,7 +1,7 @@
-package Wine.domain;
+package wine.domain;
 
-import Wine.dao.UserDao;
-import Wine.dao.WineDao;
+import wine.dao.UserDao;
+import wine.dao.WineDao;
 import java.util.List;
 
 /**
@@ -29,9 +29,9 @@ public class WineService {
      * @param food viinin ruokaehdotus
      * @throws java.lang.Exception
      */
-    public void createWine(int year, String country, String name) throws Exception {
+    public void createWine(int year, String country, String name, String grape, String food) throws Exception {
         String user = loggedIn.getUsername();
-        Wine wine = new Wine(year, country, name, user);
+        Wine wine = new Wine(year, country, name, user, grape, food);
         wineDao.create(wine);
     }
 
@@ -94,8 +94,8 @@ public class WineService {
      * @param food muokattavan viinin ruokaehdotus
      * @throws java.lang.Exception
      */
-    public void updateWine(int id, int year, String country, String name) throws Exception {
-        wineDao.updateWine(id, year, country, name);
+    public void updateWine(int id, int year, String country, String name, String grape, String food) throws Exception {
+        wineDao.updateWine(id, year, country, name, grape, food);
     }
 
     /**

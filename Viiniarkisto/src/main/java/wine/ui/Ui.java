@@ -1,9 +1,9 @@
-package Wine.ui;
+package wine.ui;
 
-import Wine.dao.FileUserDao;
-import Wine.domain.WineService;
-import Wine.dao.FileWineDao;
-import Wine.domain.Wine;
+import wine.dao.FileUserDao;
+import wine.domain.WineService;
+import wine.dao.FileWineDao;
+import wine.domain.Wine;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -93,7 +93,6 @@ public class Ui {
     /**
      * Käynnistyminen
      */
-
     public void start() throws Exception {
         System.out.println("");
         System.out.println("Viiniarkisto");
@@ -167,11 +166,10 @@ public class Ui {
     public void printWine(Wine wine) {
         System.out.println("Id: " + wine.getId());
         System.out.println("Nimi: " + wine.getName());
-        //System.out.println("Rypälelaji:" +wine.getGrape());
+        System.out.println("Rypälelaji: " + wine.getGrape());
         System.out.println("Valmistusvuosi: " + wine.getYear());
         System.out.println("Tuotantomaa: " + wine.getCountry());
-        //System.out.println("Ruokaehdotus: " + wine.getFood());
-
+        System.out.println("Ruokaehdotus: " + wine.getFood());
         System.out.println();
     }
 
@@ -201,11 +199,11 @@ public class Ui {
         String country = input.nextLine();
         System.out.print("Viinin nimi: ");
         String name = input.nextLine();
-        // System.out.println("Viinin rypälelaji: ");
-        // String grape = input.nextLine();
-        // System.out.println("Ruokaehdotus: ");
-        // String food = input.nextLine();     
-        wineService.createWine(year, country, name);
+        System.out.println("Viinin rypälelaji: ");
+        String grape = input.nextLine();
+        System.out.println("Ruokaehdotus: ");
+        String food = input.nextLine();
+        wineService.createWine(year, country, name, grape, food);
     }
 
     private List<Wine> getWines() {
@@ -237,12 +235,12 @@ public class Ui {
         String country = input.nextLine();
         System.out.print("Viinin nimi: ");
         String name = input.nextLine();
-        //System.out.println("Viinin rypälelaji: ");
-        //String grape = input.nextLine();
-        //System.out.println("Ruokaehdotus: ");
-        //String food = input.nextLine();
+        System.out.println("Viinin rypälelaji: ");
+        String grape = input.nextLine();
+        System.out.println("Ruokaehdotus: ");
+        String food = input.nextLine();
 
-        wineService.updateWine(realIndex, year, country, name);
+        wineService.updateWine(realIndex, year, country, name, grape, food);
         System.out.println("");
         System.out.println("Päivitetty viini");
         printWineById(realIndex);

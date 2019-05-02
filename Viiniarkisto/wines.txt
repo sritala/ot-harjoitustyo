@@ -1,6 +1,0 @@
-1;2015;Italia;Valkkari;susanna
-2;2016;Italia;Tommasi;masa
-3;2018;Saksa;Riesling;masa
-4;2013;Italia;Castello di Brolio;Maija
-5;2017;Espanja;Quinta de Aves Tempranillo;Maija
-6;2017;Saksa;Reh Kendermann Riesling Vom Kalkstein;Maija

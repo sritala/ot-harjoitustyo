@@ -1,6 +1,6 @@
-package Wine.dao;
+package wine.dao;
 
-import Wine.domain.Wine;
+import wine.domain.Wine;
 import java.io.File;
 import java.io.FileWriter;
 import java.util.ArrayList;
@@ -30,7 +30,9 @@ public class FileWineDao implements WineDao {
                 String country = parts[2];
                 String name = parts[3];
                 String adder = parts[4];
-                Wine wine = new Wine(year, country, name, adder);
+                String grape = parts[5];
+                String food = parts[6];
+                Wine wine = new Wine(year, country, name, adder, grape, food);
                 wine.setId(generateId());
                 this.wines.add(wine);
             }
@@ -80,11 +82,13 @@ public class FileWineDao implements WineDao {
     }
 
     @Override
-    public void updateWine(int id, int year, String country, String name) throws Exception {
+    public void updateWine(int id, int year, String country, String name, String grape, String food) throws Exception {
         Wine wine = this.wines.get(id);
         wine.setYear(year);
         wine.setCountry(country);
         wine.setName(name);
+        wine.setGrape(grape);
+        wine.setFood(food);
         this.wines.set(id, wine);
         save();
 

@@ -1,4 +1,4 @@
-package Wine.domain;
+package wine.domain;
 
 /**
  * Yksittäistä viiniä kuvaava luokka
@@ -10,8 +10,8 @@ public class Wine {
     private String country;
     private String name;
     private String adder;
-    //private String grape;
-    //private String food;
+    private String grape;
+    private String food;
 
 //    public Wine(int id, int prodYear, String prodCountry, String wineName) {
 //        this.id = id;
@@ -19,13 +19,13 @@ public class Wine {
 //        this.country = prodCountry;
 //        this.name = wineName;
 //    }
-    public Wine(int prodYear, String prodCountry, String wineName, String adder) {
+    public Wine(int prodYear, String prodCountry, String wineName, String adder, String grape, String food) {
         this.year = prodYear;
         this.country = prodCountry;
         this.name = wineName;
         this.adder = adder;
-        //this.grape = grape;
-        //this.food = food;
+        this.grape = grape;
+        this.food = food;
 
     }
 
@@ -57,9 +57,14 @@ public class Wine {
     public void setYear(int param) {
         this.year = param;
     }
-    // public void setGrape (int param){
-    //this.grape = param;
-//} 
+
+    public void setGrape(String param) {
+        this.grape = param;
+    }
+
+    public void setFood(String param) {
+        this.grape = param;
+    }
 
     public int getId() {
         return this.id;
@@ -72,11 +77,13 @@ public class Wine {
     public String getName() {
         return this.name;
     }
-    //public String getGrape(){
-    //return this.grape;
-//}
-    //public String getFood(){
-    //return this.food;
-//}
+
+    public String getGrape() {
+        return this.grape;
+    }
+
+    public String getFood() {
+        return this.food;
+    }
 
 }
