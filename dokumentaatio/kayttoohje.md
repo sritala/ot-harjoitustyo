@@ -30,5 +30,5 @@ Komennolla 3 voi poistaa olemassa olevan viinin. Viini tulee valita sen nimen pe
 
 Komennolla neljä voi muokata olemassa olevaa viiniä. Viini tulee valita sen id:n perusteella.
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/ohjeet3.png" width="400">
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kuva3.png">
 
