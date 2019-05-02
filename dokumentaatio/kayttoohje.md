@@ -17,7 +17,7 @@ Onnistunut kirjautuminen vie seuraavaan näkymään. Kirjautunut käyttäjä voi
 
 Komennolla kaksi käyttäjä voi nähdä kaikki luodut viinit listattuna. 
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kuva4.png" width="400">
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/kuva4.png">
 
 
 ## Viinin poistaminen
