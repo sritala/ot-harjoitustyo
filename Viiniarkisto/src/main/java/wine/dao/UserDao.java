@@ -1,13 +1,10 @@
-
 package wine.dao;
 
 /**
- * WineServicen rajapinta
+ * WineService interface
  */
-
 import java.util.List;
 import wine.domain.User;
-
 
 public interface UserDao {
 
@@ -18,5 +15,5 @@ public interface UserDao {
     List<User> getAll();
 
 }
-  
+
 
