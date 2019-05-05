@@ -16,7 +16,7 @@ import java.util.TreeMap;
 
 /**
  *
- * Sovelluslogiikasta vastaava luokka
+ * Represents the user interface
  */
 public class Ui {
 
@@ -29,10 +29,7 @@ public class Ui {
         this.input = input;
         inputs = new TreeMap<>();
         setup = new TreeMap<>();
-//        Properties properties = new Properties();
-//        properties.load(new FileInputStream("config.properties"));
 
-//        String wineFile = properties.getProperty("wineFile");
         FileWineDao wineDao = new FileWineDao("wines.txt");
         FileUserDao userDao = new FileUserDao("users.txt");
         wineService = new WineService(wineDao, userDao);
@@ -49,7 +46,7 @@ public class Ui {
     }
 
     /**
-     * Jos kirjautuminen on onnistunut
+     * Shown if the log in is successfull
      *
      */
     public void setup() throws Exception {
@@ -91,7 +88,7 @@ public class Ui {
     }
 
     /**
-     * Käynnistyminen
+     * Run if setup is successfull
      */
     public void start() throws Exception {
         System.out.println("");
@@ -155,13 +152,13 @@ public class Ui {
     }
 
     /**
-     * Viinien listautuminen
+     * Listing the wines
      *
-     * @param year luotavan viinin tuotantovuosi
-     * @param country luotavan viinin tuotantomaa
-     * @param name luotavan viinin nimi
-     * @param grape luotavan viinin rypälelaji
-     * @param food luotavan viinin ruokaehdotus
+     * @param year production year of the wine
+     * @param country production country of the wine
+     * @param name name of the wine
+     * @param grape grape of the wine
+     * @param food food compliment of the wine
      */
     public void printWine(Wine wine) {
         System.out.println("Id: " + wine.getId());
@@ -174,7 +171,7 @@ public class Ui {
     }
 
     /*
-    *Viinien listautuminen indeksittäin
+    *Listing wines by index
      */
     public void printWineById(int index) {
         List<Wine> wineList;
@@ -184,26 +181,31 @@ public class Ui {
     }
 
     /**
-     * Uuden viinin lisääminen kirjautuneena olevalle käyttäjälle
+     * Adding wine to logged in user
      *
-     * @param year luotavan viinin tuotantovuosi
-     * @param country luotavan viinin tuotantomaa
-     * @param name luotavan viinin nimi
-     * @param grape luotavan viinin rypälelaji
-     * @param food luotavan viinin ruokaehdotus
+     * @param year production year of the wine
+     * @param country production country of the wine
+     * @param name name of the wine
+     * @param grape grape of the wine
+     * @param food food compliment of the wine
      */
-    public void addWine() throws Exception {
-        System.out.print("Viinin vuosi: ");
-        int year = Integer.parseInt(input.nextLine());
-        System.out.print("Viinin tuotantomaa: ");
-        String country = input.nextLine();
-        System.out.print("Viinin nimi: ");
-        String name = input.nextLine();
-        System.out.println("Viinin rypälelaji: ");
-        String grape = input.nextLine();
-        System.out.println("Ruokaehdotus: ");
-        String food = input.nextLine();
-        wineService.createWine(year, country, name, grape, food);
+    public void addWine() {
+        try {
+            System.out.print("Viinin vuosi: ");
+            int year = Integer.parseInt(input.nextLine());
+            System.out.print("Viinin tuotantomaa: ");
+            String country = input.nextLine();
+            System.out.print("Viinin nimi: ");
+            String name = input.nextLine();
+            System.out.print("Viinin rypälelaji: ");
+            String grape = input.nextLine();
+            System.out.print("Ruokaehdotus: ");
+            String food = input.nextLine();
+            wineService.createWine(year, country, name, grape, food);
+        } catch (Exception e) {
+            System.out.println("Kirjoita vuosi numeroina");
+        }
+
     }
 
     private List<Wine> getWines() {
@@ -211,7 +213,7 @@ public class Ui {
     }
 
     /*
-    *Viinin poistaminen
+    *Removes the wine
      */
     private void delete() throws Exception {
         System.out.print("Poistettava viini: ");
@@ -220,30 +222,34 @@ public class Ui {
     }
 
     /*
-    *Viinin muokkaaminen
+    *Modifying of the wine 
      */
-    private void updateWine() throws Exception {
-        System.out.println();
-        printWines();
-        System.out.println();
-        System.out.print("Muokattavan viinin id:");
-        int id = Integer.parseInt(input.nextLine());
-        int realIndex = id - 1;
-        System.out.print("Viinin vuosi: ");
-        int year = Integer.parseInt(input.nextLine());
-        System.out.print("Viinin tuotantomaa: ");
-        String country = input.nextLine();
-        System.out.print("Viinin nimi: ");
-        String name = input.nextLine();
-        System.out.println("Viinin rypälelaji: ");
-        String grape = input.nextLine();
-        System.out.println("Ruokaehdotus: ");
-        String food = input.nextLine();
+    private void updateWine() {
+        try {
+            System.out.println();
+            printWines();
+            System.out.println();
+            System.out.print("Muokattavan viinin id:");
+            int id = Integer.parseInt(input.nextLine());
+            int realIndex = id - 1;
+            System.out.print("Viinin vuosi: ");
+            int year = Integer.parseInt(input.nextLine());
+            System.out.print("Viinin tuotantomaa: ");
+            String country = input.nextLine();
+            System.out.print("Viinin nimi: ");
+            String name = input.nextLine();
+            System.out.print("Viinin rypälelaji: ");
+            String grape = input.nextLine();
+            System.out.print("Ruokaehdotus: ");
+            String food = input.nextLine();
 
-        wineService.updateWine(realIndex, year, country, name, grape, food);
-        System.out.println("");
-        System.out.println("Päivitetty viini");
-        printWineById(realIndex);
+            wineService.updateWine(realIndex, year, country, name, grape, food);
+            System.out.println("");
+            System.out.println("Päivitetty viini");
+            printWineById(realIndex);
+        } catch (Exception e) {
+            System.out.println("Kirjoita vuosi numeroina");
+        }
 
     }
 }
