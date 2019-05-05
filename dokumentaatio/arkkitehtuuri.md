@@ -40,16 +40,19 @@ User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käy
 WineService vastaa toiminnallisista kokonaisuuksista ja tarjoaa muun muassa seuraavanlaisia metodeita.
 
 Viineille:
-- boolean createWine(int year, String country, String name, String adder)
+- boolean createWine(int year, String country, String name, String adder, String grape, String food)
+- void updateWine (int id, int year, String country, String name, String grape, String food)
 - void deleteWine(String name)
+- List<Wine> getWines()
 
 Käyttäjälle:
 - boolean login(String username)
 - void create(String username)
 - void logout()
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka2.png">
+WineService pääsee käsiksi käyttäjien sekä viinien tietoihin rajapintojen WineDao sekä UserDao luokkien kautta, jotka sijaitsevat pakkauksessa wine.dao. Konstruktorikutsujen yhteydessä tiedot siirtyvät sovelluslogiikalle. Wineservicen ja sovelluksen muiden osien suhdetta kuvaava luokka/pakkauskaavio:
 
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka2%20(1).png">
 
 ## käyttäjän kirjautuminen
 
