@@ -1,6 +1,21 @@
 
 # Käyttöohje
 
+Lataa tiedosto Viiniarkisto.jar
+
+# Konfigurointi
+
+Config.properties sijaitsee käynnistyshakemistossa, joka määrittelee käyttäjät ja viinit seuraaviin tiedostoihin:
+
+- file = users.txt
+- file = wines.txt
+
+# Ohjelman käynnistäminen
+
+Ohjelma käynnistetään komennolla:
+
+java -jar target/Viiniarkisto.jar
+
 ## Kirjautuminen
 
 Sovellus käynnistyy seuraavaan näkymään. Sovelluksen käyttäjä voi luoda uuden käyttäjän tai kirjautua sisään. 
