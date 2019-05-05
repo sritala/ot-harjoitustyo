@@ -37,7 +37,7 @@ Komennolla kaksi käyttäjä voi nähdä kaikki luodut viinit listattuna.
 
 ## Viinin poistaminen
 
-Komennolla 3 voi poistaa olemassa olevan viinin. Viini tulee valita sen nimen perusteella. 
+Komennolla 3 voi poistaa olemassa olevan viinin. Viini tulee valita sen nimen perusteella. Sen jälkeen viini poistuu listauksesta. 
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/removewine.png">
 
