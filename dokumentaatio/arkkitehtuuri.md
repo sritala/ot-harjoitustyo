@@ -92,6 +92,7 @@ Sovelluslogiikka selvittää UserDao:n avulla onko käyttäjätunnus olemassa. J
 
 Kun on painettu komentoa uuden käyttäjän luominen ja näkymään on syötetty käyttäjätunnus joka ei ole käytössä niin createUser etenee sovelluksen kontrollin mukaan seuraavasti: 
 
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio3.png">
 
 Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createUser antaen parametriksi luotavan käyttäjän käyttäjätunnuksen. Sovelluslogiikka selvittää userDao:n avulla onko käyttäjätunnus olemassa. Jos käyttäjän luominen on mahdollista ja käyttäjätunnusta ei ole vielä valittu niin sovelluslogiikka luo User-olion ja tallentaa sen kutsumalla UserDao:n metodia create.
 
