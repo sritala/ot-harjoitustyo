@@ -4,7 +4,7 @@ import wine.domain.Wine;
 import java.util.List;
 
 /**
- * WineServicen rajapinta
+ * WineService interface
  */
 public interface WineDao {
 
