@@ -15,3 +15,4 @@ Tänne kirjataan työhön tehdyt tunnit
 | 22.4 | 4    | Viiniarkiston kirjautumistoimintoa hiottu niin, että käyttäjän voi luoda ja jokaisella käyttäjällä näkyy vain henkilökohtaisesti luodut viinit. 
 |25.4  | 3    | Testien tekemistä, kattavuus n. 80%
 |26.4  | 2    | Muutoksia nimeen ja jar
+|5.5   | 3    | Viimeiset viimeistelyt 
