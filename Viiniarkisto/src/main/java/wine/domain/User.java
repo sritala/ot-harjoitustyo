@@ -1,7 +1,7 @@
 package wine.domain;
 
 /**
- * Järjestelmän käyttäjää edustava luokka
+ * Class representing the user properties
  */
 public class User {
 
@@ -15,6 +15,9 @@ public class User {
         return username;
     }
 
+    /**
+     * Checks if two users are equal comparing their usernames
+     */
     @Override
     public boolean equals(Object obj) {
         if (!(obj instanceof User)) {
@@ -25,3 +28,4 @@ public class User {
         return username.equals(other.username);
     }
 }
+
