@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package dao;
 
 import wine.dao.FileUserDao;
@@ -19,61 +14,58 @@ import org.junit.Rule;
 import org.junit.rules.TemporaryFolder;
 import wine.domain.User;
 
-/**
- *
- * @author susanna
- */
 public class FileUserDaoTest {
-    
-        @Rule
-        public TemporaryFolder testFolder = new TemporaryFolder();
 
-        File userFile;
-        UserDao dao;
+    @Rule
+    public TemporaryFolder testFolder = new TemporaryFolder();
 
-        @Before
-        public void setUp() throws Exception {
-            userFile = testFolder.newFile("testfile_users.txt");
+    File userFile;
+    UserDao dao;
 
-            try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
-                file.write("testi;\n");
-            }
+    @Before
+    public void setUp() throws Exception {
+        userFile = testFolder.newFile("testfile_users.txt");
 
-            dao = new FileUserDao(userFile.getAbsolutePath());
+        try (FileWriter file = new FileWriter(userFile.getAbsolutePath())) {
+            file.write("testi;\n");
         }
 
-        @Test
-        public void usersAreReadCorrectlyFromFile() {
-            List<User> users = dao.getAll();
-            assertEquals(1, users.size());
-            User user = users.get(0);
-            assertEquals("testi", user.getUsername());
-        }
+        dao = new FileUserDao(userFile.getAbsolutePath());
+    }
 
-        @Test
-        public void existingUserIsFound() {
-            User user = dao.findByUsername("testi");
-            assertEquals("testi", user.getUsername());
-        }
+    @Test
+    public void usersAreReadCorrectlyFromFile() {
+        List<User> users = dao.getAll();
+        assertEquals(1, users.size());
+        User user = users.get(0);
+        assertEquals("testi", user.getUsername());
+    }
 
-        @Test
-        public void nonExistingUserIsFound() {
-            User user = dao.findByUsername("matti");
-            assertEquals(null, user);
-        }
+    @Test
+    public void existingUserIsFound() {
+        User user = dao.findByUsername("testi");
+        assertEquals("testi", user.getUsername());
+    }
 
-        @Test
-        public void savedUserIsFound() throws Exception {
-            User nawUser = new User("matti");
-            dao.create(nawUser);
+    @Test
+    public void nonExistingUserIsFound() {
+        User user = dao.findByUsername("matti");
+        assertEquals(null, user);
+    }
 
-            User user = dao.findByUsername("matti");
-            assertEquals("matti", user.getUsername());
-        }
+    @Test
+    public void savedUserIsFound() throws Exception {
+        User nawUser = new User("matti");
+        dao.create(nawUser);
 
-        @After
-        public void tearDown() {
-            userFile.delete();
-        }
-    
+        User user = dao.findByUsername("matti");
+        assertEquals("matti", user.getUsername());
+    }
+
+    @After
+    public void tearDown() {
+        userFile.delete();
+    }
+
 }
+
