@@ -47,3 +47,5 @@ Komennolla neljä voi muokata olemassa olevaa viiniä. Viini tulee valita sen id
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/modifywine.png">
 
+Kirjoittamalla komennon "X" käyttäjä voi kirjautua ulos sekä "X" komennolla voi lisäksi sulkea sovelluksen kirjautumisnäkymässä. 
+
