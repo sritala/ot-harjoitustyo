@@ -34,3 +34,9 @@ Määrittelydokumentin ja käyttöohjeen listaamat toiminnallisuudet on käyty l
 - Jos ei kirjoita oikeaa komentoa niin tulee virheellinen komento ilmoitus ennen kirjautumista ja kirjautumisen jälkeen.
 - Luodessa käyttäjän käyttäjänimen tulee olla uniikki ja samaa käyttäjätunnusta ei voi luoda uudestaan. 
 - Viinin vuosi tulee kirjoittaa numeroina. 
+
+## Mitä olisi voinut testata
+
+- Virheilmoitusta ei ole kun yritti kirjautua tekemättömällä käyttäjätunnuksella sisään. 
+
+
