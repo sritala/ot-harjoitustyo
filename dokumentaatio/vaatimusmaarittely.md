@@ -29,5 +29,4 @@ Omat viinit näkymä
 
 ## Mahdolliset jatkokehitykset
 
-Sovellusta voisi jatkaa lisäämällä tietokenttiä viineille, kuten viinin rypälelaji tai sille sopiva ruoka. Lisäksi sovellukselle voisi 
-tehdä graafisen käyttöliittymän sekä parantaa kirjautumista. 
+Sovellukselle voisi tehdä graafisen käyttöliittymän sekä parantaa kirjautumista luomalla käyttäjälle nimen sekä salasanan. 
