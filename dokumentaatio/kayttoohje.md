@@ -24,7 +24,7 @@ Sovellus käynnistyy seuraavaan näkymään. Sovelluksen käyttäjä voi luoda u
 
 ## Uuden viinin luominen
 
-Onnistunut kirjautuminen vie seuraavaan näkymään. Kirjautunut käyttäjä voi luoda viinin valitsemalla komennon yksi. Viini tulee määritellä sen valmistusvuoden, tuotantomaan, nimen, rypälelajin sekä ruokaehdotuksen mukaan. 
+Onnistunut kirjautuminen vie seuraavaan näkymään. Kirjautunut käyttäjä voi luoda viinin valitsemalla komennon yksi. Viini tulee määritellä sen valmistusvuoden, tuotantomaan, nimen, rypälelajin sekä ruokaehdotuksen mukaan. Huom! Tämä on ensimmäinen toiminnallisuus jota uusi käyttäjä voi tehdä. Ensin täytyy luoda viinejä, jotta niitä voi myöhemmin listata, poistaa sekä muokata. 
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/addwine.png" width="400">
 
