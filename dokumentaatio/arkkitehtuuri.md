@@ -100,7 +100,7 @@ Tapahtumakäsittelijä kutsuu sovelluslogiikan metodia createUser antaen paramet
 
 Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantomaa, nimi, rypälelaji, ruoka) täytyy ilmoittaa, jotta onnistunut viini saadaan luotua viinilistaan. Sovelluksen kontrolli etenee seuraavasti:
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio2%20.png">
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio4.png">
 
 Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin tietoihin on lisätty vaatimukseksi myös rypälelaji sekä ruoka.
 
