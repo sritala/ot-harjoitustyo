@@ -5,7 +5,7 @@ import wine.dao.WineDao;
 import java.util.List;
 
 /**
- * Sovelluslogiikasta vastaava luokka
+ * A class handling business logic
  */
 public class WineService {
 
@@ -20,13 +20,13 @@ public class WineService {
     }
 
     /**
-     * Uuden viinin lisääminen
+     * Adding a new wine
      *
-     * @param year luotavan viinin valmistusvuosi
-     * @param country luotavan viinin valmistusmaa
-     * @param name luotavan viinin nimi
-     * @param grape luotavan viinin laji
-     * @param food viinin ruokaehdotus
+     * @param year production year of the wine
+     * @param country production country of the wine
+     * @param name name of the wine
+     * @param grape grape of the wine
+     * @param food food which compliments the wine
      * @throws java.lang.Exception
      */
     public void createWine(int year, String country, String name, String grape, String food) throws Exception {
@@ -40,9 +40,9 @@ public class WineService {
     }
 
     /**
-     * Viinin poistaminen
+     * Removing the wine
      *
-     * @param name Poistettavan viinin nimi
+     * @param name name of the removed wine
      * @throws java.lang.Exception
      */
     public void delete(String name) throws Exception {
@@ -50,11 +50,11 @@ public class WineService {
     }
 
     /**
-     * Kirjautuminen käyttäjätunnuksella
+     * Log in by username
      *
-     * @param username luotavan käyttäjän tunnus
+     * @param username username
      *
-     * @return luonnin onnistumisstatus
+     * @return returns true or false depending on if the username was found
      */
     public boolean login(String username) {
         User user = userDao.findByUsername(username);
@@ -68,30 +68,30 @@ public class WineService {
     }
 
     /**
-     * kirjautuneena oleva käyttäjä
+     * Logged user
      *
-     * @return kirjautuneena oleva käyttäjä
+     * @return returns logged in user
      */
     public User getLoggedUser() {
         return loggedIn;
     }
 
     /**
-     * uloskirjautuminen
+     * Log out
      */
     public void logout() {
         loggedIn = null;
     }
 
     /**
-     * Viinin muokkaaminen
+     * Modifying the wine
      *
-     * @param id viinin id
-     * @param year muokattavan viinin valmistusvuosi
-     * @param country muokattavan viinin valmistusmaa
-     * @param name muokattavan viinin nimi
-     * @param grape muokattavan viinin laji
-     * @param food muokattavan viinin ruokaehdotus
+     * @param id id of the wine
+     * @param year production year of the wine
+     * @param country production country of the wine
+     * @param name name of the wine
+     * @param grape grape of the wine
+     * @param food food which compliments the wine
      * @throws java.lang.Exception
      */
     public void updateWine(int id, int year, String country, String name, String grape, String food) throws Exception {
@@ -99,11 +99,11 @@ public class WineService {
     }
 
     /**
-     * uuden käyttäjän luominen
+     * creating of a new user
      *
-     * @param username käyttäjätunnus
+     * @param username username
      *
-     * @return true jos käyttäjätunnus on luotu onnistuneesti, muuten false
+     * @return true if no duplicated username was found
      * @throws java.lang.Exception
      */
     public boolean createUser(String username) throws Exception {
