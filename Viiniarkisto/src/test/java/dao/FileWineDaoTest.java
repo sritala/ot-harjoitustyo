@@ -1,10 +1,5 @@
 package dao;
 
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 import wine.dao.FileWineDao;
 import wine.domain.Wine;
 import wine.dao.WineDao;
@@ -47,12 +42,12 @@ public class FileWineDaoTest {
         assertEquals("Schloss", wine.getName());
         assertEquals("Valkoviini", wine.getGrape());
         assertEquals("Sushi", wine.getFood());
-        
+
     }
 
     @Test
     public void correctListingAfterDeletedWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija","Valkoviini", "Sushi"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija", "Valkoviini", "Sushi"));
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
 
@@ -60,9 +55,10 @@ public class FileWineDaoTest {
         wines = dao.getAll();
         assertEquals(0, wines.size());
     }
-        @Test
+
+    @Test
     public void correctListingAfterDeletedNonExistingWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija","Valkoviini", "Sushi"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija", "Valkoviini", "Sushi"));
         List<Wine> wines = dao.getAll();
         assertEquals(1, wines.size());
 
@@ -70,7 +66,6 @@ public class FileWineDaoTest {
         wines = dao.getAll();
         assertEquals(1, wines.size());
     }
-    
 
     @Test
     public void winesEmptyByDefault() {
@@ -81,9 +76,9 @@ public class FileWineDaoTest {
 
     @Test
     public void correctListingAfterUpdatedWine() throws Exception {
-        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija","Valkoviini", "Sushi"));
+        dao.create(new Wine(2014, "Saksa", "Schloss", "Maija", "Valkoviini", "Sushi"));
         List<Wine> wines = dao.getAll();
-        dao.updateWine(0, 1999, "Pakistan", "öalksdöalksd","rftgh", "gyhuj");
+        dao.updateWine(0, 1999, "Pakistan", "öalksdöalksd", "rftgh", "gyhuj");
         Wine updatedFirst = wines.get(0);
         assertEquals(1999, updatedFirst.getYear());
     }
