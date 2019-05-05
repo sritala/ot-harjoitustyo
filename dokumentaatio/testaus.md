@@ -1,26 +1,32 @@
 # Testausdokumentti
-Ohjelmaa on testattu sekä automatisoiduin yksikkö- ja integraatiotestein JUnitilla sekä manuaalisesti tapahtunein järjestelmätason testein.
+
+Ohjelmaa on testattu JUnit testeillä ja manuaalisesti komentorivin testeillä.
 
 ## Yksikkö- ja integraatiotestaus
 ### Sovelluslogiikka
 
 Pakkauksen wine.domain luokkia testaavat FakeUserDao, FakeWineDao sekä WineServiceTest, joiden määrittelevät testitapaukset simuloivat käyttöliittymän WineService- olioiden avulla suorittamia toiminnallisuuksia.
 
-Sovelluslogiikkakerroksen luokille User ja Wine on tehty muutama yksikkötesti kattamaan tapaukset, joita integraatiotestit eivät kata (mm. olioiden equals-metodit).
+Sovelluslogiikkakerroksen luokille User ja Wine on tehty muutama testi testiluokissa FileUserDaoTest ja FileWineTest
+joka kattaa mm. equals metodit. 
 
 ## DAO-luokat
-Molempien DAO-luokkien toiminnallisuus on testattu luomalla testeissä tilapäinen tiedosto hyödyntäen JUnitin TemporaryFolder-ruleja.
+
+DAO-luokkien toiminnallisuus on testattu luomalla tilapäinen TemporaryFolder tiedosto noudattaen Junitin sääntöjä. 
 
 ## Testauskattavuus
+
 Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus on 82% ja haarautumakattavuus 83%
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/jacoco.png">
 
 ## Järjestelmätestaus
+
 Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.
 
 ## Asennus ja konfigurointi
-Sovellus on haettu ja sitä on testattu käyttöohjeen kuvaamalla tavalla sekä OSX- että Linux-ympäristöön siten, että sovelluksen käynnistyshakemistossa on ollut käyttöohjeen kuvauksen mukainen config.properties-tiedosto.
+
+Sovelluksen asennus on tehty sekä testattu ohjeiden mukaan sisältäen käynnistyshakemistossa sijaitsevan config.properties tiedoston. 
 
 ## Toiminnallisuudet
 
