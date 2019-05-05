@@ -7,8 +7,8 @@ Lataa tiedosto Viiniarkisto.jar
 
 Config.properties sijaitsee käynnistyshakemistossa, joka määrittelee käyttäjät ja viinit seuraaviin tiedostoihin:
 
-- file = users.txt
-- file = wines.txt
+- fileUser = users.txt
+- fileWine = wines.txt
 
 # Ohjelman käynnistäminen
 
