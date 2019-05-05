@@ -29,13 +29,13 @@ Tässä näkymässä käyttäjä saa mahdollisuuden luoda uuden käyttäjätunnu
 - 4 muokkaa viiniä
 - x kirjaudu ulos
 
-Lisää viini komennolla käyttäjä luo Viiniarkistoonsa uuden viinin, joka tulee määritellä sen valmistusvuoden, tuotantomaan, nimen, rypälelajin sekä ruokaehdotuksen mukaan. Viinien listauksessa näkyy luodut viinit, joka edellyttää ensin ainakin yhden viinin luomista. Jos viiniarkistossa on viini niin sitä voi muokata ja poistaa arkistosta. 
+Lisää viini komennolla käyttäjä luo Viiniarkistoonsa uuden viinin, joka tulee määritellä sen valmistusvuoden, tuotantomaan, nimen, rypälelajin sekä ruokaehdotuksen mukaan. Viinien listauksessa näkyy luodut viinit, joka edellyttää ensin ainakin yhden viinin luomista. Jos viiniarkistossa on viini niin sitä voi muokata tai poistaa arkistosta. 
 
 ## Sovelluslogiikka
 
-User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käyttäjällä on uniikki käyttäjätunnus ja jokaisella viinillä on oma id ja sille listattuna sen tuontantovuosi, tuotantomaa, nimi, rypälelaji sekä ruoka.  
+User kuvaa käyttäjiä ja Wine käyttäjien listaamia viinejä. Jokaisella käyttäjällä on uniikki käyttäjätunnus ja jokaisella viinillä on oma id ja sille listattuna sen tuontantovuosi, tuotantomaa, nimi, rypälelaji sekä ruoka. Relaatiomallista nähdään, että taulujen suhde on yhden suhde moneen eli yhdellä käyttäjällä voi olla monta viiniä. 
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka.png">
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sovelluslogiikka%20(1).png">
 
 WineService vastaa toiminnallisista kokonaisuuksista ja tarjoaa muun muassa seuraavanlaisia metodeita.
 
