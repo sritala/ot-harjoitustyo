@@ -30,7 +30,7 @@ Onnistunut kirjautuminen vie seuraavaan näkymään. Kirjautunut käyttäjä voi
 
 ## Viinien listautuminen
 
-Komennolla kaksi käyttäjä voi nähdä kaikki luodut viinit listattuna. 
+Komennolla kaksi käyttäjä voi nähdä kaikki luodut viinit listattuna ja viinien tiedot. 
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/listwines.png">
 
