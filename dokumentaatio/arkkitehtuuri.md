@@ -76,20 +76,25 @@ Käyttäjien viinien tallentavan tiedoston formaatti on seuraava:
 Puolipisteellä erotetaan viinit seuraavasti:
 - Viinin id;vuosi;maa;nimi;käyttäjä;rypälelaji;ruoka
 
-## käyttäjän kirjautuminen
+## Päätoiminnallisuudet
 
-Kun kirjautumisnäkymässä on syötekenttään kirjoitettu oikea käyttäjätunnus ja painetaan enteriä niin sovellus kirjautuu sisään. Sovelluksen kontrolli etenee seuraavasti:
+Toimintalogiikka on kuvattu seuraavaksi kahdessa sekvenssikaaviossa muutaman päätoiminnallisuuden osalta. 
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavioOT.png">
+### käyttäjän kirjautuminen
 
-Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin Wine on nykyään nimettynä Ui. 
+Kun kirjautumisnäkymässä on valittu kirjautumiskomento ja kirjoitettu käyttätunnus oikein niin sovelluksen kontrolli etenee seuraavanlaisesti:
+
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio2.png"> 
 
 ## uuden viinin tekeminen
 
 Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantomaa, nimi, rypälelaji, ruoka) täytyy ilmoittaa, jotta onnistunut viini saadaan luotua viinilistaan. Sovelluksen kontrolli etenee seuraavasti:
+
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio.png">
 
 Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin tietoihin on lisätty vaatimukseksi myös rypälelaji sekä ruoka.
+
+Sovelluslogiikka selvittää UserDao:n avulla onko käyttäjätunnus olemassa. Jos on ja kirjautuminen onnistuu niin käyttöliittymä vaihtuu sovelluksen varsinaiseen Viiniarkisto tekstikäyttöliittymä näkymään, jossa voi toteuttaa sovelluksen CRUD toiminnot. 
 
 # Ohjelman rakenteeseen jääneet heikkoudet
 
