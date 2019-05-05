@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import wine.domain.User;
@@ -26,7 +21,7 @@ public class WineServiceTest {
     public void setUp() throws Exception {
         wineDao = new FakeWineDao();
         userDao = new FakeUserDao();
-        Wine w1 = new Wine(2013, "Italia", "Toscana", "Pekka","Punaviini", "Pasta");
+        Wine w1 = new Wine(2013, "Italia", "Toscana", "Pekka", "Punaviini", "Pasta");
         Wine w2 = new Wine(2016, "Espanja", "Rioja", "Pekka", "Punaviini", "Liha");
         User u1 = new User("testi");
         userDao.create(u1);
@@ -108,7 +103,8 @@ public class WineServiceTest {
     public void canCreateNewUser() throws Exception {
         assertEquals(true, service.createUser("testi2"));
     }
-     @Test
+
+    @Test
     public void cantCreateNewUserWithExistingUsername() throws Exception {
         assertEquals(false, service.createUser("testi"));
     }
