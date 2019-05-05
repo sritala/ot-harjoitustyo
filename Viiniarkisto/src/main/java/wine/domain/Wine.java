@@ -1,7 +1,7 @@
 package wine.domain;
 
 /**
- * Yksittäistä viiniä kuvaava luokka
+ * Class representing a single wine object
  */
 public class Wine {
 
@@ -57,7 +57,7 @@ public class Wine {
     }
 
     public void setFood(String param) {
-        this.grape = param;
+        this.food = param;
     }
 
     public int getId() {
