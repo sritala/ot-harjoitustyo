@@ -84,7 +84,7 @@ Toimintalogiikka on kuvattu seuraavaksi kahdessa sekvenssikaaviossa muutaman pä
 
 Kun kirjautumisnäkymässä on valittu kirjautumiskomento ja kirjoitettu käyttätunnus oikein niin sovelluksen kontrolli etenee seuraavasti:
 
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio2.png"> 
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio2%20.png"> 
 
 Sovelluslogiikka selvittää UserDao:n avulla onko käyttäjätunnus olemassa. Jos on ja kirjautuminen onnistuu niin käyttöliittymä vaihtuu sovelluksen varsinaiseen Viiniarkisto tekstikäyttöliittymä näkymään, jossa voi toteuttaa sovelluksen CRUD toiminnot. 
 
