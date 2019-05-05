@@ -73,7 +73,7 @@ Käyttäjien viinien tallentavan tiedoston formaatti on seuraava:
 - 1;2013;Italia;Castello di Brolio;Maija;Valkoviini;Vahvat juustot
 - 2;2017;Espanja;Quinta de Aves Tempranillo;Maija;Punaviini / Tempranillo;Tapakset ja erilaiset liharuoat 
 
-Puolipisteellä erotetaan viinit seuraavasti:
+Puolipisteellä erotetaan viinin tiedot seuraavasti:
 - Viinin id;vuosi;maa;nimi;käyttäjä;rypälelaji;ruoka
 
 ## Päätoiminnallisuudet
