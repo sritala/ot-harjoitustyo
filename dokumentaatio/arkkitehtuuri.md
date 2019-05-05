@@ -48,3 +48,11 @@ Kun kirjautumisnäkymässä on syötekenttään kirjoitettu oikea käyttäjätun
 
 Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantomaa, nimi) täytyy ilmoittaa, jotta onnistunut viini saadaan luotua viinilistaan. Sovelluksen kontrolli etenee seuraavasti:
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavioOT1.png">
+
+# Ohjelman rakenteeseen jääneet heikkoudet
+
+## Käyttöliittymä
+
+Käyttöliittymässä voisi olla enemmän tietoturvaa parantavia asioita kuten salasanan luonti. Lisäksi tekstikäyttöliittymän olisi voinut korvata graafisella käyttöliittymällä, joka saattaisi olla selkeämpi. Checkstyle pisteitä kertyi myös Ui:n pitkistä start ja setup metodeista, joita olisi voinut jakaa pienempiin osiin.
+
+
