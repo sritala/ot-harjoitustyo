@@ -96,7 +96,7 @@ Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantoma
 
 Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin tietoihin on lisätty vaatimukseksi myös rypälelaji sekä ruoka.
 
-Tapahtumankäsittelijä kutsuu sovelluslogiikan metodia createWine antaen parametreiksi luotavan viinin tiedot. Sovelluslogiikka luo uuden Wine-olion ja tallentaa sen kutsumalla WineDao:n metodia create. Käyttöliittymä taas listaa näytettävät viinit  kutsumalla omaa metodiaan printWines ja printWineById. 
+Tapahtumankäsittelijä kutsuu sovelluslogiikan metodia addWine antaen parametreiksi luotavan viinin tiedot. Sovelluslogiikka luo uuden Wine-olion ja tallentaa sen kutsumalla WineDao:n metodia create. Käyttöliittymä taas listaa näytettävät viinit  kutsumalla omaa metodiaan printWines ja printWineById. 
 
 ## Muut toiminnallisuudet
 
