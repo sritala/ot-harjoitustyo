@@ -47,29 +47,49 @@ public class FileWineDao implements WineDao {
         return this.wines.size() + 1;
     }
 
+    /**
+     * creates a wine to the list
+     *
+     * @param wine new created wine
+     * @return returns wine for the further handling
+     * @throws java.lang.Exception
+     */
+
     @Override
     public Wine create(Wine wine) throws Exception {
-//        System.out.println("FileWineDao " + wine.getAdder());
         wine.setId(generateId());
         this.wines.add(wine);
         save();
         return wine;
     }
 
+    /**
+     * saves wine for the file
+     *
+     */
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (Wine wine : this.wines) {
 
-                writer.write(wine.getId() + ";" + wine.getYear() + ";" + wine.getCountry() + ";" + wine.getName() + ";" + wine.getAdder() + "\n");
+                writer.write(wine.getId() + ";" + wine.getYear() + ";" + wine.getCountry() + ";" + wine.getName() + ";" + wine.getAdder() + ";" + wine.getGrape() + ";" + wine.getFood() + "\n");
             }
         }
     }
 
+    /**
+     * fetches existing wines
+     *
+     */
     @Override
     public List<Wine> getAll() {
         return this.wines;
     }
 
+    /**
+     * deletes wine from file
+     *
+     * @param name wine to be deleted
+     */
     @Override
     public void delete(String name) throws Exception {
         for (int i = 0; i < this.wines.size(); i++) {
@@ -81,6 +101,16 @@ public class FileWineDao implements WineDao {
         }
     }
 
+    /**
+     * Updates wine and saves the result to file
+     *
+     * @param id id of the wine
+     * @param year new year of the wine
+     * @param country new country of the wine
+     * @param name new name of the wine
+     * @param grape new grape of the wine
+     * @param food new food of the wine
+     */
     @Override
     public void updateWine(int id, int year, String country, String name, String grape, String food) throws Exception {
         Wine wine = this.wines.get(id);
@@ -94,3 +124,4 @@ public class FileWineDao implements WineDao {
 
     }
 }
+
