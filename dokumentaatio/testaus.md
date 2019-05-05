@@ -22,7 +22,7 @@ Käyttöliittymäkerrosta lukuunottamatta sovelluksen testauksen rivikattavuus o
 
 ## Järjestelmätestaus
 
-Sovelluksen järjestelmätestaus on suoritettu manuaalisesti.
+Sovelluksen järjestelmätestaus on suoritettu manuaalisesti komentorivillä. 
 
 ## Asennus ja konfigurointi
 
