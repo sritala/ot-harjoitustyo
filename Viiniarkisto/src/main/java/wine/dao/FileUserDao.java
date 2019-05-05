@@ -8,7 +8,7 @@ import java.util.Scanner;
 import wine.domain.User;
 
 /**
- * UserDaon luokka, joka mahdollistaa käyttäjän luomisen ja tallentamisen
+ * UserDao's class, which enables to create a user and saves it for the file
  *
  */
 public class FileUserDao implements UserDao {
@@ -33,6 +33,10 @@ public class FileUserDao implements UserDao {
 
     }
 
+    /**
+     * saves user for the file
+     *
+     */
     private void save() throws Exception {
         try (FileWriter writer = new FileWriter(new File(file))) {
             for (User user : users) {
@@ -55,6 +59,13 @@ public class FileUserDao implements UserDao {
                 .orElse(null);
     }
 
+    /**
+     * creates a new user
+     *
+     * @param user
+     * @return returns user for login
+     * @throws java.lang.Exception
+     */
     @Override
     public User create(User user) throws Exception {
         users.add(user);
