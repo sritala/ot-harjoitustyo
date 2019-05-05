@@ -29,4 +29,4 @@ Omat viinit näkymä
 
 ## Mahdolliset jatkokehitykset
 
-Sovellukselle voisi tehdä graafisen käyttöliittymän sekä parantaa kirjautumista luomalla käyttäjälle nimen sekä salasanan. Viinin muokkaamistoimintoa voisi myös parantaa niin, että tiedot olisivat tallentuneena näkymässä ja voisi vain muokata jotain haluaamansa kohtaa. 
+Sovellukselle voisi tehdä graafisen käyttöliittymän sekä parantaa kirjautumista luomalla käyttäjälle nimen sekä salasanan. Viinin muokkaamistoimintoa voisi myös parantaa niin, että tiedot olisivat tallentuneena näkymässä ja voisi vain muokata jotain haluaamansa kohtaa. Viinilistaus voisi myös olla siistimmän näköinen. 
