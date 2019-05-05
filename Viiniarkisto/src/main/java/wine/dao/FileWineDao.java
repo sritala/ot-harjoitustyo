@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 
 /**
  *
- * WineDaon luokka, joka vastaa viinien tallennuksesta sekä luonnista
+ * WineDao's class, which handles creating and saving of the wines 
  */
 public class FileWineDao implements WineDao {
 
