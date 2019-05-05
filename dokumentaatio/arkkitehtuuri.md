@@ -2,7 +2,8 @@
 
 ## Rakenne
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria, ja koodin pakkausrakenne on seuraava:
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/arkkitehtuuri.png">
+
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/rakenne.png">
 
 ## Käyttöliittymä
 
