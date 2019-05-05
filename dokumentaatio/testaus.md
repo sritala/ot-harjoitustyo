@@ -35,8 +35,9 @@ Määrittelydokumentin ja käyttöohjeen listaamat toiminnallisuudet on käyty l
 - Luodessa käyttäjän käyttäjänimen tulee olla uniikki ja samaa käyttäjätunnusta ei voi luoda uudestaan. 
 - Viinin vuosi tulee kirjoittaa numeroina. 
 
-## Mitä olisi voinut testata
+## Mitä jäi tekemättä
 
-- Virheilmoitusta ei ole kun yritti kirjautua tekemättömällä käyttäjätunnuksella sisään. 
+- Virheilmoitus, joka tulisi kun yrittää kirjautua tekemättömällä käyttäjätunnuksella sisään.
+
 
 
