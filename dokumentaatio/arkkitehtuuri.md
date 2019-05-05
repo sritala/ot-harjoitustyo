@@ -53,6 +53,8 @@ Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantoma
 
 ## Käyttöliittymä
 
-Käyttöliittymässä voisi olla enemmän tietoturvaa parantavia asioita kuten salasanan luonti. Lisäksi tekstikäyttöliittymän olisi voinut korvata graafisella käyttöliittymällä, joka saattaisi olla selkeämpi. Checkstyle pisteitä kertyi myös Ui:n pitkistä start ja setup metodeista, joita olisi voinut jakaa pienempiin osiin.
+Käyttöliittymässä voisi olla enemmän tietoturvaa parantavia asioita kuten salasanan luonti. Lisäksi tekstikäyttöliittymän olisi voinut korvata graafisella käyttöliittymällä, joka saattaisi olla käyttäjälle selkeämpi. Checkstyle pisteitä kertyi myös Ui:n pitkistä start ja setup metodeista, joita olisi voinut jakaa pienempiin metodeihin. 
 
+## DAO-luokat
 
+FileDao luokat sisältävät paljon koodia, jota olisi voinut erotella omiin luokkiin. 
