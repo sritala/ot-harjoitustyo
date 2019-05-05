@@ -87,9 +87,9 @@ Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin Wine on nykyään nime
 ## uuden viinin tekeminen
 
 Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantomaa, nimi, rypälelaji, ruoka) täytyy ilmoittaa, jotta onnistunut viini saadaan luotua viinilistaan. Sovelluksen kontrolli etenee seuraavasti:
-<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavioOT1.png">
+<img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio.png">
 
-Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin tietoihin on lisätty vaatimukseksi myös rypälelaji sekä ruoka. Ja Wine -luokka on uudelleen nimetty Ui -luokaksi. 
+Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin tietoihin on lisätty vaatimukseksi myös rypälelaji sekä ruoka.
 
 # Ohjelman rakenteeseen jääneet heikkoudet
 
