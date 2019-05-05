@@ -86,6 +86,8 @@ Kun kirjautumisnäkymässä on valittu kirjautumiskomento ja kirjoitettu käytt�
 
 <img src="https://github.com/sritala/ot-harjoitustyo/blob/master/dokumentaatio/kuvat/sekvenssikaavio2.png"> 
 
+Sovelluslogiikka selvittää UserDao:n avulla onko käyttäjätunnus olemassa. Jos on ja kirjautuminen onnistuu niin käyttöliittymä vaihtuu sovelluksen varsinaiseen Viiniarkisto tekstikäyttöliittymä näkymään, jossa voi toteuttaa sovelluksen CRUD toiminnot. 
+
 ## uuden viinin tekeminen
 
 Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantomaa, nimi, rypälelaji, ruoka) täytyy ilmoittaa, jotta onnistunut viini saadaan luotua viinilistaan. Sovelluksen kontrolli etenee seuraavasti:
@@ -94,7 +96,11 @@ Kirjautunut käyttäjä pääsee luomaan viinin, jonka tiedot (vuosi, tuotantoma
 
 Huom! Sovellus on muuttunut kaavion tekemisestä, jolloin tietoihin on lisätty vaatimukseksi myös rypälelaji sekä ruoka.
 
-Sovelluslogiikka selvittää UserDao:n avulla onko käyttäjätunnus olemassa. Jos on ja kirjautuminen onnistuu niin käyttöliittymä vaihtuu sovelluksen varsinaiseen Viiniarkisto tekstikäyttöliittymä näkymään, jossa voi toteuttaa sovelluksen CRUD toiminnot. 
+Tapahtumankäsittelijä kutsuu sovelluslogiikan metodia createWine antaen parametreiksi luotavan viinin tiedot. Sovelluslogiikka luo uuden Wine-olion ja tallentaa sen kutsumalla WineDao:n metodia create. Käyttöliittymä taas listaa näytettävät viinit  kutsumalla omaa metodiaan printWines ja printWineById. 
+
+## Muut toiminnallisuudet
+
+Muut toiminnalisuudet toimivat samalla periaatteella kun tapahtumankäsittelijä kutsuu sopivaa sovelluslogiikan metodia ja sovelluslogiikka päivittää viinilistaa ja kirjautuneen käyttäjän tilaa. 
 
 # Ohjelman rakenteeseen jääneet heikkoudet
 
